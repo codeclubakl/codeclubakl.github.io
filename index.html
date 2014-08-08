@@ -42,13 +42,13 @@
 <a name="installing-qbasic" class="anchor" href="#installing-qbasic"><span class="octicon octicon-link"></span></a>Installing QBasic</h3>
 
 <p>Windows:
-1. Download <a href="https://drive.google.com/file/d/0B41zmm_jyDAPZ2hMbzZsQUNiZmc/edit?usp=sharing">the windows QBasic zip</a>
-2. Extract the zip file
+1. Download <a href="https://drive.google.com/file/d/0B41zmm_jyDAPZ2hMbzZsQUNiZmc/edit?usp=sharing">the windows QBasic zip</a><br>
+2. Extract the zip file<br>
 3. Double-click on qb.bat</p>
 
 <p>OS X:
-1. Download <a href="https://drive.google.com/file/d/0B41zmm_jyDAPN3BpNmMwT2x1MWM/edit?usp=sharing">the OS X QBasic zip</a>
-2. Extract the zip file
+1. Download <a href="https://drive.google.com/file/d/0B41zmm_jyDAPN3BpNmMwT2x1MWM/edit?usp=sharing">the OS X QBasic zip</a><br>
+2. Extract the zip file<br>
 3. Double-click on qb.command</p>
 
 <p>If you see a blue blocky screen then it's working!</p>
@@ -63,27 +63,27 @@
 
 <p>Then press F5 (you might need to press Function + F5 on a laptop).</p>
 
-<p>You should see a black screen that says <code>Hello World</code>.</p>
+<p>You should see a different screen. Ignore the blue stuff at the top, it's not from you - it's leftover from before.</p>
+
+<p>At the bottom you should see <code>Hello World</code> and then <code>Press any key to continue</code>.</p>
 
 <h3>
 <a name="asking-a-question" class="anchor" href="#asking-a-question"><span class="octicon octicon-link"></span></a>Asking a question</h3>
 
 <pre><code>1 PRINT "What is your name?"
 2 INPUT name$
-3 PRINT "Welcome, " + name$
+3 PRINT "Hi, " + name$
 </code></pre>
+
+INPUT keeps a record of what you typed in.
 
 <h3>
 <a name="making-a-choice" class="anchor" href="#making-a-choice"><span class="octicon octicon-link"></span></a>Making a choice</h3>
 
-<pre><code>1 PRINT "Do you go north or south?"
-2 INPUT choice$
-3 IF (choice$ = "up") THEN
-4  PRINT "I can see forever!"
-5 END IF
-6 IF (choice$ = "down") THEN
-7   PRINT "You are hiding in the ground."
-8 END IF
+<pre><code>1 PRINT "What is your name?"
+2 INPUT name$
+3 IF (name$ = "Alice") THEN PRINT "Alice likes rabbits."
+4 IF (name$ = "Bob") THEN PRINT "Bob likes burgers."
 </code></pre>
 
 <h3>
@@ -91,19 +91,19 @@
 
 <p>The computer goes through your program, line by line, as if it was a list of instructions.</p>
 
-<pre><code>1 PRINT "First print this"
-2 PRINT "Then print this"
+<pre><code>1 PRINT "First it prints this"
+2 PRINT "Then it prints this"
 </code></pre>
 
-<p>What if we don't want to go line by line?</p>
+<p>We can tell the computer to jump to a different line using GOTO.</p>
+
+<p>Can you pretend to be a computer, and run this program in your brain? You need to keep track of what line number you are on.</p>
 
 <pre><code>1 PRINT "What's the password?"
 2 INPUT pass$
-3 IF (pass$ = "secret") THEN
-5    GOTO 10
-6 END IF
-7 PRINT "That's not the password."
-8 GOTO 1
+3 IF (pass$ = "secret") THEN GOTO 10
+4 PRINT "That's not the password."
+5 GOTO 1
 10 PRINT "You win!"
 </code></pre>
 
@@ -118,7 +118,7 @@
 PRINT "What's the password?"
 INPUT pass$
 IF (pass$ = "secret") THEN
-   GOTO insde
+   GOTO inside
    END IF
 PRINT "That's not the password."
 GOTO outside
