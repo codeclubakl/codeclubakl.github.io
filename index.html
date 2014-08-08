@@ -77,9 +77,9 @@
 <h3>
 <a name="asking-a-question" class="anchor" href="#asking-a-question"><span class="octicon octicon-link"></span></a>Asking a question</h3>
 
-<pre><code>1 PRINT "What is your name?"
-2 INPUT name$
-3 PRINT "Hi, " + name$
+<pre><code>PRINT "What is your name?"
+INPUT name$
+PRINT "Hi, " + name$
 </code></pre>
 
 <p>INPUT keeps a record of what you typed in.</p>
@@ -87,10 +87,10 @@
 <h3>
 <a name="making-a-choice" class="anchor" href="#making-a-choice"><span class="octicon octicon-link"></span></a>Making a choice</h3>
 
-<pre><code>1 PRINT "What is your name?"
-2 INPUT name$
-3 IF (name$ = "Alice") THEN PRINT "Alice likes rabbits."
-4 IF (name$ = "Bob") THEN PRINT "Bob likes burgers."
+<pre><code>PRINT "What is your name?"
+INPUT name$
+IF (name$ = "Alice") THEN PRINT "Alice likes rabbits."
+IF (name$ = "Bob") THEN PRINT "Bob likes burgers."
 </code></pre>
 
 <h3>
@@ -98,30 +98,7 @@
 
 <p>The computer goes through your program, line by line, as if it was a list of instructions.</p>
 
-<pre><code>1 PRINT "First it prints this"
-2 PRINT "Then it prints this"
-</code></pre>
-
-<p>We can tell the computer to jump to a different line using GOTO.</p>
-
-<p>Can you pretend to be a computer, and run this program in your brain? You need to keep track of what line number you are on.</p>
-
-<pre><code>1 PRINT "What's the password?"
-2 INPUT pass$
-3 IF (pass$ = "secret") THEN GOTO 10
-4 PRINT "Wrong."
-5 GOTO 1
-10 PRINT "You win!"
-</code></pre>
-
-<h3>
-<a name="line-numbers" class="anchor" href="#line-numbers"><span class="octicon octicon-link"></span></a>Line numbers</h3>
-
-<p>If we put a line number at the start of a line, we can GOTO that line.</p>
-
-<p>Numbers are hard to remember so most people use labels instead.</p>
-
-<p>Let's remove all the line numbers from the code and make some labels, 'outside' and 'inside' instead.</p>
+<p>We can tell the computer to jump to a different line using a GOTO command and a label.</p>
 
 <pre><code>outside:
 PRINT "What's the password?"
@@ -133,10 +110,12 @@ inside:
 PRINT "You win!"
 </code></pre>
 
-<h3>
-<a name="the-challenge" class="anchor" href="#the-challenge"><span class="octicon octicon-link"></span></a>The challenge</h3>
+<p>Can you pretend to be a computer, and run this program in your brain?</p>
 
-<p>Make a game where you can move from room to room by choosing where to go.</p>
+<h3>
+<a name="you-are-in-a-dark-forest" class="anchor" href="#you-are-in-a-dark-forest"><span class="octicon octicon-link"></span></a>You are in a dark forest…</h3>
+
+<p>We could make a game where you move from room to room by choosing where to go.</p>
 
 <p>Maybe one room has a password door, and the clue is in another room?</p>
 
