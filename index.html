@@ -53,6 +53,8 @@
 
 <p>If you see a blue blocky screen then it's working!</p>
 
+<b>If your mouse cursor is stick inside the QBasic screen, press Ctrl-F10 to release it.</b>
+
 <h3>
 <a name="your-first-program" class="anchor" href="#your-first-program"><span class="octicon octicon-link"></span></a>Your first program</h3>
 
@@ -75,7 +77,7 @@
 3 PRINT "Hi, " + name$
 </code></pre>
 
-INPUT keeps a record of what you typed in.
+<p>INPUT keeps a record of what you typed in.</p>
 
 <h3>
 <a name="making-a-choice" class="anchor" href="#making-a-choice"><span class="octicon octicon-link"></span></a>Making a choice</h3>
@@ -102,7 +104,7 @@ INPUT keeps a record of what you typed in.
 <pre><code>1 PRINT "What's the password?"
 2 INPUT pass$
 3 IF (pass$ = "secret") THEN GOTO 10
-4 PRINT "That's not the password."
+4 PRINT "Wrong."
 5 GOTO 1
 10 PRINT "You win!"
 </code></pre>
@@ -110,19 +112,18 @@ INPUT keeps a record of what you typed in.
 <h3>
 <a name="line-numbers" class="anchor" href="#line-numbers"><span class="octicon octicon-link"></span></a>Line numbers</h3>
 
-<p>Line numbers are hard to remember so we can use labels instead. This makes your program easier to understand.</p>
+<p>If we put a line number at the start of a line, we can GOTO that line.</p>
 
-<p>This program works exactly like the program above, but it uses a label called 'outside' instead of line numbers.</p>
+<p>Numbers are hard to remember so most people use labels instead.</p>
+
+<p>Let's remove all the line numbers from the code and make some labels, 'outside' and 'inside' instead.</p>
 
 <pre><code>outside:
 PRINT "What's the password?"
 INPUT pass$
-IF (pass$ = "secret") THEN
-   GOTO inside
-   END IF
-PRINT "That's not the password."
+IF (pass$ = "secret") THEN GOTO inside
+PRINT "Wrong."
 GOTO outside
-
 inside:
 PRINT "You win!"
 </code></pre>
