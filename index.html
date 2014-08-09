@@ -22,8 +22,6 @@
           <h2>Making cool stuff with code!</h2>
         </header>
 
-
-
 <!--        <section id="downloads" class="clearfix">
           <a href="https://github.com/codeclubakl" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
@@ -47,16 +45,36 @@
 <a name="installing-qbasic" class="anchor" href="#installing-qbasic"><span class="octicon octicon-link"></span></a>Installing QBasic</h3>
 
 <p>Windows:<br>
-1. Download <a href="https://drive.google.com/file/d/0B41zmm_jyDAPZ2hMbzZsQUNiZmc/edit?usp=sharing">the windows QBasic zip</a><br>
+1. Download <a href="/qbasic/qbasic-dosbox-win.zip">the windows QBasic zip</a><br>
 2. Extract the zip file<br>
 3. Double-click on qb.bat</p>
 
 <p>OS X:<br>
-1. Download <a href="https://drive.google.com/file/d/0B41zmm_jyDAPN3BpNmMwT2x1MWM/edit?usp=sharing">the OS X QBasic zip</a><br>
+1. Download <a href="/qbasic/qbasic-dosbox-mac.zip">the OS X QBasic zip</a><br>
 2. Extract the zip file<br>
 3. Double-click on qb.command</p>
 
+<div class="alert warning">
+  
+  <p>Your Mac might say you cannot run the program because it's from an unidentified developer.</p>
+
+  <img src="/qbasic/mac-run-1.png">
+
+  <p>You can still run it by right-clicking or holding control while you click on it.</p>
+
+  <img src="/qbasic/mac-run-2.png">  
+
+  <p>Choose 'open' from the menu.</p>
+
+  <img src="/qbasic/mac-run-3.png">
+
+  <p>Choose 'open' again.</p>
+
+</div>
+
 <p>If you see a blue blocky screen then it's working!</p>
+
+<img src="/qbasic/qbasic.png" width="200px">
 
 <p><b>If your mouse cursor is stick inside the QBasic screen, press Ctrl-F10 to release it.</b></p>
 
@@ -65,32 +83,35 @@
 
 <p>Write this</p>
 
-<pre><code>PRINT "Hello World"
+<pre><code>CLS
+PRINT "Hello World"
 </code></pre>
 
 <p>Then press F5 (you might need to press Function + F5 on a laptop).</p>
 
-<p>You should see a different screen. Ignore the blue stuff at the top, it's not from you - it's leftover from before.</p>
-
-<p>At the bottom you should see <code>Hello World</code> and then <code>Press any key to continue</code>.</p>
+<p>You should see a black screen that says <code>Hello World</code> and then <code>Press any key to continue</code>.</p>
 
 <h3>
 <a name="asking-a-question" class="anchor" href="#asking-a-question"><span class="octicon octicon-link"></span></a>Asking a question</h3>
 
-<pre><code>PRINT "What is your name?"
-INPUT name$
-PRINT "Hi, " + name$
+<pre><code>CLS
+PRINT "What is your name?"
+INPUT n$
+PRINT "Hi, " + n$
 </code></pre>
 
-<p>INPUT keeps a record of what you typed in.</p>
+<p>When you run this program (F5) it will ask for your name. Type in your name and press ENTER.</p>
 
 <h3>
 <a name="making-a-choice" class="anchor" href="#making-a-choice"><span class="octicon octicon-link"></span></a>Making a choice</h3>
 
-<pre><code>PRINT "What is your name?"
-INPUT name$
-IF (name$ = "Alice") THEN PRINT "Alice likes rabbits."
-IF (name$ = "Bob") THEN PRINT "Bob likes burgers."
+<p>This is the same program as above with two lines added.</p>
+
+<pre><code>CLS
+PRINT "What is your name?"
+INPUT n$
+IF (n$ = "Alice") THEN PRINT "Alice likes rabbits."
+IF (n$ = "Bob") THEN PRINT "Bob likes burgers."
 </code></pre>
 
 <h3>
@@ -100,7 +121,8 @@ IF (name$ = "Bob") THEN PRINT "Bob likes burgers."
 
 <p>We can tell the computer to jump to a different line using a GOTO command and a label.</p>
 
-<pre><code>outside:
+<pre><code>CLS
+outside:
 PRINT "What's the password?"
 INPUT pass$
 IF (pass$ = "secret") THEN GOTO inside
