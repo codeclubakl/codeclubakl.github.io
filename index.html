@@ -30,10 +30,6 @@
         <hr>
 
         <section id="main_content">
-          <h2>
-<a name="welcome-to-code-club-auckland" class="anchor" href="#welcome-to-code-club-auckland"><span class="octicon octicon-link"></span></a>Welcome to Code Club Auckland.</h2>
-
-<p>More words go here.</p>
 
 <h2>QBasic tutorial</h2>
 
@@ -82,62 +78,87 @@
 <p>Write this</p>
 
 <pre><code>CLS
-PRINT "Hello World"
+PRINT "Hello!"
 </code></pre>
 
 <p>Then press F5 (you might need to press Function + F5 on a laptop).</p>
 
-<p>You should see a black screen that says <code>Hello World</code> and then <code>Press any key to continue</code>.</p>
+<p>You should see a black screen that says <code>Hello!</code> and then <code>Press any key to continue</code>.</p>
+
+<p><code>CLS</code> means 'clear the screen.'</p>
+
+<p><code>PRINT</code> writes letters onto the screen.</p>
 
 <h3>
 <a name="asking-a-question" class="anchor" href="#asking-a-question"><span class="octicon octicon-link"></span></a>Asking a question</h3>
 
 <pre><code>CLS
-PRINT "What is your name?"
-INPUT n$
-PRINT "Hi, " + n$
+PRINT "Should we go north or south?"
+INPUT mychoice$
+PRINT "You go " + mychoice$
 </code></pre>
 
-<p>When you run this program (F5) it will ask for your name. Type in your name and press ENTER.</p>
+<p>When you run this program (F5) it will pause and wait for you to type something. Type in your answer and press ENTER.</p>
+
+<p><code>mychoice$</code> is a variable. It's like a box that you can put words into.</p>
+
+<p><code>INPUT mychoice$</code> means: Save what the user types in and put it into the variable called 'mychoice$'. </p>
 
 <h3>
 <a name="making-a-choice" class="anchor" href="#making-a-choice"><span class="octicon octicon-link"></span></a>Making a choice</h3>
 
-<p>This is the same program as above with two lines added.</p>
+<p>This is the same program as above, with three lines added.</p>
 
 <pre><code>CLS
-PRINT "What is your name?"
-INPUT n$
-IF (n$ = "Alice") THEN PRINT "Alice likes rabbits."
-IF (n$ = "Bob") THEN PRINT "Bob likes burgers."
+PRINT "Should we go north or south?"
+INPUT mychoice$
+PRINT "You go " + mychoice$
+IF (mychoice$ = "north") THEN PRINT "You walk to Birkenhead."
+IF (mychoice$ = "south") THEN PRINT "You walk to Epsom."
+PRINT "The end."
 </code></pre>
+
+<p>Try running this program and entering 'north' or 'south' as your answer.</p>
+
+<p>What happens if you write something else?</p>
+
+<p>What happens if you write 'North' with a capital letter at the start?</p>
 
 <h3>
 <a name="jumping-around" class="anchor" href="#jumping-around"><span class="octicon octicon-link"></span></a>Jumping around</h3>
 
-<p>The computer goes through your program, line by line, as if it was a list of instructions.</p>
+<p>The computer goes through your program, line by line, and does what the line says. When it finishes one line it starts the next line.</p>
 
-<p>We can tell the computer to jump to a different line using a GOTO command and a label.</p>
+<p>We can tell the computer to jump to a different line using a GOTO command.</p>
+
+<p>We need to add labels for the computer to go to. A label is a word with a colin : at the end. Labels don't do anything on their own.</p>
 
 <pre><code>CLS
-outside:
-PRINT "What's the password?"
-INPUT pass$
-IF (pass$ = "secret") THEN GOTO inside
-PRINT "Wrong."
-GOTO outside
-inside:
-PRINT "You win!"
+home:
+PRINT "Should we go north or south?"
+INPUT mychoice$
+IF (mychoice$ = "north") THEN GOTO north
+IF (mychoice$ = "south") THEN GOTO south
+PRINT "I don't understand. Please try again."
+GOTO home
+
+north:
+PRINT "You swim to Birkenhead."
+END
+
+south:
+PRINT "You fly to Epsom."
+END
 </code></pre>
 
-<p>Can you pretend to be a computer, and run this program in your brain?</p>
+<p>Can you see the three labels? Can you run this program in your head?</p>
 
 <h3>
 <a name="you-are-in-a-dark-forest" class="anchor" href="#you-are-in-a-dark-forest"><span class="octicon octicon-link"></span></a>You are in a dark forest…</h3>
 
-<p>We could make a game where you move from room to room by choosing where to go.</p>
+<p>Let's make a story game where the player can choose where to go.</p>
 
-<p>Maybe one room has a password door, and the clue is in another room?</p>
+<p>Or maybe a quiz where they have to get the right answer to continue.</p>
 
 <h3>
 <a name="what-have-we-learned" class="anchor" href="#what-have-we-learned"><span class="octicon octicon-link"></span></a>What have we learned?</h3>
@@ -147,6 +168,59 @@ PRINT "You win!"
 <p>If you made any mistakes then the program might not work. Sometimes QBasic tries to tell you what is wrong and how to fix it. But it's not always good at explaining what's wrong!</p>
 
 <p>You can tell the computer to jump or 'go to' other parts of the program.</p>
+
+<h3>Extra for Experts</h3>
+
+<p>Expand this for some extra ideas:</p>
+
+<details>
+
+  <p>Take a look at this.</p>
+  <pre><code>
+    coins = 7
+    PRINT coins
+    PRINT "coins"
+    PRINT coins + "coins"
+  </code></pre>
+
+  <p>What's the difference between <code>coins</code> and <code>"coins"</code>?</p>
+
+  <p>Can you run this code in your brain? See if the computer gets the same result.</p>
+
+  <pre><code>
+    coins = 7
+    PRINT "Do you buy an apple?"
+    INPUT a$
+    IF (a$ = "yes") THEN coins = coins - 2
+    PRINT "You have " + coins + " coins left."
+  </code></pre>
+
+  <p><code>coins = coins - 2</code> is a strange thing to say! It looks impossible.</p>
+
+  <p>What is means is, the NEW value for coins should be the OLD value of coins minus 2.</p>
+
+  <p>coins = coins - 2<br>
+  coins = 7 - 2<br>
+  coins = 5</p>
+
+  <p>IF and END IF</p>
+
+  <pre><code>
+    coins = 7
+    PRINT "Do you buy an apple?"
+    INPUT a$
+    IF (a$ = "yes") THEN
+        coins = coins - 2
+        PRINT "You bought an apple."
+    END IF
+    PRINT "You have " + coins + " coins left."
+  </code></pre>
+
+  <p>Something special happens when THEN is the last word on a line.</p>
+
+  <p>END IF is a strange thing to say. What does it mean?</p>
+
+</details>
 
         </section>
 
