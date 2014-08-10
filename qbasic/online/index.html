@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>qb</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+      textarea {
+        background-color: grey;
+        margin-top: 64px;
+      }
+      .emscripten { margin-left: auto; margin-right: auto; display: block; }
+      textarea.emscripten { font-family: monospace; width: 80%; }
+      div.emscripten { text-align: center; }
+      div.emscripten_border { width:640px; height:400px; 
+        border: 2px solid grey; margin-top: 40px; margin-bottom: 40px; 
+        margin-left: auto; margin-right: auto;}
+      /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+      canvas.emscripten { border: 0px none;}
+    </style>
+  </head>
+  <body>
+    <div class="emscripten" id="status">Downloading...</div>
+    <div class="emscripten">
+      <progress value="0" max="100" id="progress" hidden=1></progress>  
+    </div>
+    <div class="emscripten_border">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    </div>
+<!--     <div class="emscripten">
+   
+      <input type="checkbox" id="resize">Resize canvas
+      <input type="checkbox" id="pointerLock" checked>Lock/hide mouse pointer
+      &nbsp;&nbsp;&nbsp;
+      <input type="button" value="Fullscreen" onclick="Module.requestFullScreen(document.getElementById('pointerLock').checked, document.getElementById('resize').checked)">
+      
+    </div>
+    <textarea class="emscripten" id="output" rows="8"></textarea>-->
+    <div class="emscripten">WARNING: Saving does not work. If you refresh the page your work will be lost, even if you saved it.</div>
+
+    <script type='text/javascript'>
+
+      //Disable F3 and F5 (search and refresh)
+      document.onkeydown = function(event) {
+        switch (event.keyCode){
+              case 114 : //F3 button
+              case 116 : //F5 button
+                  event.preventDefault();
+          }
+      }
+
+      // connect to canvas
+      var Module = {
+        preRun: [],
+        postRun: [],
+        print: (function() {
+          //var element = document.getElementById('output');
+          //MG element.value = ''; // clear browser cache
+          return function(text) {
+            text = Array.prototype.slice.call(arguments).join(' ');
+            // These replacements are necessary if you render to raw HTML
+            //text = text.replace(/&/g, "&amp;");
+            //text = text.replace(/</g, "&lt;");
+            //text = text.replace(/>/g, "&gt;");
+            //text = text.replace('\n', '<br>', 'g');
+            //MG element.value += text + "\n";
+            //MG element.scrollTop = element.scrollHeight; // focus on bottom
+            //MG removed the DOSBox terminal. Log it to the console instead.
+            console.log(text);
+          };
+        })(),
+        printErr: function(text) {
+          text = Array.prototype.slice.call(arguments).join(' ');
+          if (0) { // XXX disabled for safety typeof dump == 'function') {
+            dump(text + '\n'); // fast, straight to the real console
+          } else {
+            console.log(text);
+          }
+        },
+        canvas: document.getElementById('canvas'),
+        setStatus: function(text) {
+          if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
+          if (text === Module.setStatus.text) return;
+          var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
+          var now = Date.now();
+          if (m && now - Date.now() < 30) return; // if this is a progress update, skip it if too soon
+          var statusElement = document.getElementById('status');
+          var progressElement = document.getElementById('progress');
+          if (m) {
+            text = m[1];
+            progressElement.value = parseInt(m[2])*100;
+            progressElement.max = parseInt(m[4])*100;
+            progressElement.hidden = false;
+          } else {
+            progressElement.value = null;
+            progressElement.max = null;
+            progressElement.hidden = true;
+          }
+          statusElement.innerHTML = text;
+        },
+        totalDependencies: 0,
+        monitorRunDependencies: function(left) {
+          this.totalDependencies = Math.max(this.totalDependencies, left);
+          Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
+        }
+      };
+      Module.setStatus('Downloading...');
+    </script>
+<script type="text/javascript">
+
+var Module;
+
+if (typeof Module === 'undefined') Module = eval('(function() { try { return Module || {} } catch(e) { return {} } })()');
+
+if (!Module.expectedDataFileDownloads) {
+
+  Module.expectedDataFileDownloads = 0;
+
+  Module.finishedDataFileDownloads = 0;
+
+}
+
+Module.expectedDataFileDownloads++;
+
+(function() {
+
+
+
+    var PACKAGE_PATH;
+
+    if (typeof window === 'object') {
+
+      PACKAGE_PATH = window['encodeURIComponent'](window.location.pathname.toString().substring(0, window.location.pathname.toString().lastIndexOf('/')) + '/');
+
+    } else {
+
+      // worker
+
+      PACKAGE_PATH = encodeURIComponent(location.pathname.toString().substring(0, location.pathname.toString().lastIndexOf('/')) + '/');
+
+    }
+
+    var PACKAGE_NAME = 'qb.data';
+
+    var REMOTE_PACKAGE_NAME = (Module['filePackagePrefixURL'] || '') + 'qb.data';
+
+    var REMOTE_PACKAGE_SIZE = 278804;
+
+    var PACKAGE_UUID = '8c56c6a5-9535-4915-b093-166e034063ae';
+
+  
+
+    function fetchRemotePackage(packageName, packageSize, callback, errback) {
+
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('GET', packageName, true);
+
+      xhr.responseType = 'arraybuffer';
+
+      xhr.onprogress = function(event) {
+
+        var url = packageName;
+
+        var size = packageSize;
+
+        if (event.total) size = event.total;
+
+        if (event.loaded) {
+
+          if (!xhr.addedTotal) {
+
+            xhr.addedTotal = true;
+
+            if (!Module.dataFileDownloads) Module.dataFileDownloads = {};
+
+            Module.dataFileDownloads[url] = {
+
+              loaded: event.loaded,
+
+              total: size
+
+            };
+
+          } else {
+
+            Module.dataFileDownloads[url].loaded = event.loaded;
+
+          }
+
+          var total = 0;
+
+          var loaded = 0;
+
+          var num = 0;
+
+          for (var download in Module.dataFileDownloads) {
+
+          var data = Module.dataFileDownloads[download];
+
+            total += data.total;
+
+            loaded += data.loaded;
+
+            num++;
+
+          }
+
+          total = Math.ceil(total * Module.expectedDataFileDownloads/num);
+
+          if (Module['setStatus']) Module['setStatus']('Downloading data... (' + loaded + '/' + total + ')');
+
+        } else if (!Module.dataFileDownloads) {
+
+          if (Module['setStatus']) Module['setStatus']('Downloading data...');
+
+        }
+
+      };
+
+      xhr.onload = function(event) {
+
+        var packageData = xhr.response;
+
+        callback(packageData);
+
+      };
+
+      xhr.send(null);
+
+    };
+
+
+
+    function handleError(error) {
+
+      console.error('package error:', error);
+
+    };
+
+  
+
+      var fetched = null, fetchedCallback = null;
+
+      fetchRemotePackage(REMOTE_PACKAGE_NAME, REMOTE_PACKAGE_SIZE, function(data) {
+
+        if (fetchedCallback) {
+
+          fetchedCallback(data);
+
+          fetchedCallback = null;
+
+        } else {
+
+          fetched = data;
+
+        }
+
+      }, handleError);
+
+    
+
+  function runWithFS() {
+
+
+
+function assert(check, msg) {
+
+  if (!check) throw msg + new Error().stack;
+
+}
+
+
+
+    function DataRequest(start, end, crunched, audio) {
+
+      this.start = start;
+
+      this.end = end;
+
+      this.crunched = crunched;
+
+      this.audio = audio;
+
+    }
+
+    DataRequest.prototype = {
+
+      requests: {},
+
+      open: function(mode, name) {
+
+        this.name = name;
+
+        this.requests[name] = this;
+
+        Module['addRunDependency']('fp ' + this.name);
+
+      },
+
+      send: function() {},
+
+      onload: function() {
+
+        var byteArray = this.byteArray.subarray(this.start, this.end);
+
+
+
+          this.finish(byteArray);
+
+
+
+      },
+
+      finish: function(byteArray) {
+
+        var that = this;
+
+        Module['FS_createPreloadedFile'](this.name, null, byteArray, true, true, function() {
+
+          Module['removeRunDependency']('fp ' + that.name);
+
+        }, function() {
+
+          if (that.audio) {
+
+            Module['removeRunDependency']('fp ' + that.name); // workaround for chromium bug 124926 (still no audio with this, but at least we don't hang)
+
+          } else {
+
+            Module.printErr('Preloading file ' + that.name + ' failed');
+
+          }
+
+        }, false, true); // canOwn this data in the filesystem, it is a slide into the heap that will never change
+
+        this.requests[this.name] = null;
+
+      },
+
+    };
+
+      new DataRequest(0, 278804, 0, 0).open('GET', '/qb.exe');
+
+
+
+    function processPackageData(arrayBuffer) {
+
+      Module.finishedDataFileDownloads++;
+
+      assert(arrayBuffer, 'Loading data file failed.');
+
+      var byteArray = new Uint8Array(arrayBuffer);
+
+      var curr;
+
+      
+
+      // Reuse the bytearray from the XHR as the source for file reads.
+
+      DataRequest.prototype.byteArray = byteArray;
+
+          DataRequest.prototype.requests["/qb.exe"].onload();
+
+          Module['removeRunDependency']('datafile_qb.data');
+
+
+
+    };
+
+    Module['addRunDependency']('datafile_qb.data');
+
+  
+
+    if (!Module.preloadResults) Module.preloadResults = {};
+
+  
+
+      Module.preloadResults[PACKAGE_NAME] = {fromCache: false};
+
+      if (fetched) {
+
+        processPackageData(fetched);
+
+        fetched = null;
+
+      } else {
+
+        fetchedCallback = processPackageData;
+
+      }
+
+    
+
+  }
+
+  if (Module['calledRun']) {
+
+    runWithFS();
+
+  } else {
+
+    if (!Module['preRun']) Module['preRun'] = [];
+
+    Module["preRun"].push(runWithFS); // FS is not initialized yet, wait for it
+
+  }
+
+
+
+})();
+
+
+
+Module['arguments'] = [ './qb.exe' ];
+</script>
+    <script async type="text/javascript" src="dosbox.js"></script>
+  </body>
+</html>
