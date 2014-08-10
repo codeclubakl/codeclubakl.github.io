@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Code Club Auckland by codeclubakl</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Code Club Auckland</h1>
+          <h2>Making cool stuff with code!</h2>
+        </header>
+
+<!--        <section id="downloads" class="clearfix">
+          <a href="https://github.com/codeclubakl" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+-->
+
+        <hr>
+
+        <section id="main_content">
+
+<h2>QBasic Project</h2>
+
+<p>QBasic is an old programming language. It's not used much any more, but it used to a very popular language for beginners.</p>
+
+<p>Old computer magazines used to include programs written in Basic - not on a disk, but just printed in the magazine. You had to type all the code into your computer before you could run the program!</p>
+
+<h3>
+<a name="installing-qbasic" class="anchor" href="#installing-qbasic"><span class="octicon octicon-link"></span></a>Installing QBasic</h3>
+
+<p>Windows:<br>
+1. Download <a href="/qbasic/qbasic-dosbox-win.zip">the windows QBasic zip</a><br>
+2. Extract the zip file<br>
+3. Double-click on qb.bat</p>
+
+<p>OS X:<br>
+1. Download <a href="/qbasic/qbasic-dosbox-mac.zip">the OS X QBasic zip</a><br>
+2. Extract the zip file<br>
+3. Double-click on qb.command</p>
+
+<div class="alert warning">
+  
+  <p>Your Mac might say you cannot run the program because it's from an unidentified developer.</p>
+
+  <img src="/qbasic/mac-run-1.png">
+
+  <p>You can still run it by right-clicking or holding control while you click on it.</p>
+
+  <img src="/qbasic/mac-run-2.png">  
+
+  <p>Choose 'open' from the menu.</p>
+
+  <img src="/qbasic/mac-run-3.png">
+
+  <p>Choose 'open' again.</p>
+
+</div>
+
+<p>If you see a blue blocky screen then it's working!</p>
+
+<img src="/qbasic/qbasic.png" width="200px">
+
+<h3>
+<a name="your-first-program" class="anchor" href="#your-first-program"><span class="octicon octicon-link"></span></a>Try it out</h3>
+
+<p>Write this</p>
+
+<pre><code>CLS
+PRINT "Hello!"
+</code></pre>
+
+<p>Then press F5 (you might need to press Function + F5 on a laptop).</p>
+
+<p>You should see a black screen that says <code>Hello!</code> and then <code>Press any key to continue</code>.</p>
+
+<p>Press a key to go back to the editor.</p>
+
+<p><code>CLS</code> means 'clear the screen.'</p>
+
+<p><code>PRINT</code> writes letters onto the screen.</p>
+
+<h3>Making an Adventure Game</h3>
+
+<p>We're going to make a text game where the player moves from room to room by choosing where to go next.</p>
+
+<p>We need to:</p>
+
+<ul>
+  <li>Print words to the screen.</li>
+  <li>Ask the player to type in their choice.</li>
+  <li>Do something different based on their choice.</li>
+</ul>
+
+<h3>
+<a name="asking-a-question" class="anchor" href="#asking-a-question"><span class="octicon octicon-link"></span></a>Asking a question</h3>
+
+<pre><code>CLS
+PRINT "Should we go north or south?"
+INPUT mychoice$
+</code></pre>
+
+<p>Run this program (F5).</p>
+
+<p>The computer runs the program line-by-line.</p>
+
+<p>At the INPUT line it stops, and waits for you to type in something and press ENTER.</p>
+
+<p>It saves your answer into a variable called <code>mychoice$</code>. A variable is like a box that you can put something inside.</p>
+
+<h3>
+<a name="making-a-choice" class="anchor" href="#making-a-choice"><span class="octicon octicon-link"></span></a>Using the answer to do something</h3>
+
+<p>This is the same code as above, with three lines added.</p>
+
+<pre><code>CLS
+PRINT "Should we go north or south?"
+INPUT mychoice$
+IF (mychoice$ = "north") THEN PRINT "You walk to Birkenhead."
+IF (mychoice$ = "south") THEN PRINT "You walk to Epsom."
+PRINT "The end."
+</code></pre>
+
+<p>Try running this program and entering 'north' or 'south' as your answer.</p>
+
+<p>What happens if you write something else?</p>
+
+<p>What happens if you write 'North' with a capital letter at the start?</p>
+
+<h3>
+<a name="jumping-around" class="anchor" href="#jumping-around"><span class="octicon octicon-link"></span></a>Jumping around</h3>
+
+<p>The computer starts from the first line and does each instruction in order.</p>
+
+<p>We can tell the computer to jump to a different line using a GOTO command.</p>
+
+<p>We add labels for the computer to go to. A label is a word with a colin : at the end.</p>
+
+<pre><code>CLS
+home:
+PRINT "Should we go north or south?"
+INPUT mychoice$
+IF (mychoice$ = "north") THEN GOTO birken
+IF (mychoice$ = "south") THEN GOTO epsom
+PRINT "I don't understand. Please try again."
+GOTO home
+
+birken:
+PRINT "You swim to Birkenhead."
+END
+
+epsom:
+PRINT "You fly to Epsom."
+END
+</code></pre>
+
+<p>Can you see the three labels? Can you run this program in your head?</p>
+
+<h3>You are in a dark forest…</h3>
+
+<p>That's all you need to know to make a story game.</p>
+
+<p>Or a quiz.</p>
+
+<p>Or a information guide?</p>
+
+<h3>Extra for Experts</h3>
+
+<p>Expand this for some extra ideas:</p>
+
+<details>
+
+  <p>Take a look at this.</p>
+  <pre><code>
+    coins = 7
+    PRINT coins
+    PRINT "coins"
+    PRINT coins + "coins"
+  </code></pre>
+
+  <p>What's the difference between <code>coins</code> and <code>"coins"</code>?</p>
+
+  <p>Can you run this code in your brain? See if the computer gets the same result.</p>
+
+  <pre><code>
+    coins = 7
+    PRINT "Do you buy an apple?"
+    INPUT a$
+    IF (a$ = "yes") THEN coins = coins - 2
+    PRINT "You have " + coins + " coins left."
+  </code></pre>
+
+  <p><code>coins = coins - 2</code> is a strange thing to say! It looks impossible.</p>
+
+  <p>What is means is, the NEW value for coins should be the OLD value of coins minus 2.</p>
+
+  <p>coins = coins - 2<br>
+  coins = 7 - 2<br>
+  coins = 5</p>
+
+  <p>IF and END IF</p>
+
+  <pre><code>
+    coins = 7
+    PRINT "Do you buy an apple?"
+    INPUT a$
+    IF (a$ = "yes") THEN
+        coins = coins - 2
+        PRINT "You bought an apple."
+    END IF
+    PRINT "You have " + coins + " coins left."
+  </code></pre>
+
+  <p>Something special happens when THEN is the last word on a line.</p>
+
+  <p>END IF is a strange thing to say. What does it mean?</p>
+
+</details>
+
+        </section>
+
+        <footer>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
