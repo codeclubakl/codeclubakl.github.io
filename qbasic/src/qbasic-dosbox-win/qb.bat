@@ -1,2 +1,2 @@
 cd DOSBox
-dosbox.exe -conf ".\DOSBox\dosbox.conf" ".\qb45\qb.exe"
+dosbox.exe -conf ".\dosbox.conf" "..\qb45\qb.exe"
