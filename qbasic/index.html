@@ -76,9 +76,7 @@
 
       <h3>Installing on Linux</h3>
 
-      <p>We haven't prepared an easy Linux download.</p>
-
-      <p>You'll have to install DOSBox, download QBasic 4.5, then run DOSBox from the terminal giving it the path to qb.exe.</p>
+      <p>We haven't prepared an easy Linux download yet. You'll have to install DOSBox, download QBasic 4.5, then run DOSBox from the terminal giving it the path to qb.exe. Ask a mentor for help if you want.</p>
 
       <h3>Use QBasic online (for a Chromebook or any computer)</h3>
 
@@ -106,27 +104,27 @@
       <h3>
       <a name="your-first-program" class="anchor" href="#your-first-program"><span class="octicon octicon-link"></span></a>Try it out</h3>
 
-      <p>Write this</p>
+      <p>Type this into the editor:</p>
 
 <pre><code>CLS
 PRINT "Hello!"
 </code></pre>
 
-      <p>Then press F5 (you might need to press Function + F5 on a laptop).</p>
-
-      <p>You should see a black screen that says <code>Hello!</code> and then <code>Press any key to continue</code>.</p>
-
-      <p>Press a key to go back to the editor.</p>
+      <p>Then press F5 (you might need to press Function + F5 on a laptop). QBasic will run the program.</p>
 
       <p><code>CLS</code> means 'clear the screen.'</p>
 
       <p><code>PRINT</code> writes letters onto the screen.</p>
 
+      <p>You should see a black screen that says <code>Hello!</code> and then <code>Press any key to continue</code>.</p>
+
+      <p>Well done! Press a key to go back to the blue editor.</p>
+
       <h3>Making an Adventure Game</h3>
 
       <img class="printtiny" src="forest.jpg">
 
-      <p>We're going to make a text game where the player moves between places by choosing where to go next.</p>
+      <p>We will make a story game where the player can go to different places.</p>
 
       <p>We need to:</p>
 
@@ -136,21 +134,21 @@ PRINT "Hello!"
         <li>Do something different based on their choice.</li>
       </ul>
 
-      <h3>
-      <a name="asking-a-question" class="anchor" href="#asking-a-question"><span class="octicon octicon-link"></span></a>Step 1: Asking a question</h3>
+      <h3>Step 1: Ask a question</h3>
 
 <pre><code>CLS
 PRINT "Should we go north or south?"
 INPUT mychoice$
+PRINT "OK, let's go."
 </code></pre>
 
       <p>Run this program (F5).</p>
 
-      <p>The computer runs the program line-by-line.</p>
+      <p>The computer runs the program line-by-line, starting from the top.</p>
 
-      <p>At the INPUT line it stops, and waits for you to type in something and press ENTER.</p>
+      <p>At <code>INPUT</code> line it stops and waits until you type in something and press ENTER.</p>
 
-      <p>It saves your answer into a variable called <code>mychoice$</code>. A variable is like a box that you can put something inside.</p>
+      <p>It saves your answer into a variable called <code>mychoice$</code>. We will use this next.</p>
 
       <h3>Step 2: React to the user's choice</h3>
 
@@ -159,19 +157,20 @@ INPUT mychoice$
 <pre><code>CLS
 PRINT "Should we go north or south?"
 INPUT mychoice$
-IF (mychoice$ = "north") THEN PRINT "You found a secret cave!"
+PRINT "OK, let's go."
+IF mychoice$ = "north" THEN PRINT "You found a secret cave!"
 </code></pre>
 
-      <p>Try running this program. What happens if you type 'north' [ENTER] as your answer?</p>
+      <p>Can you guess what this will do? Try reading the code out loud if it helps.</p>
 
-      <p>What happens if you write 'North' with a capital letter instead?</p>
+      <p>Press F5 to run the program. Can you find the secret cave?</p>
 
       <h3>
       <a name="jumping-around" class="anchor" href="#jumping-around"><span class="octicon octicon-link"></span></a>Step 3: Jumping around</h3>
 
-      <p>The computer starts from the first line goes through the program, line by line.</p>
+      <p>Normally, the computer runs the program line-by-line.</p>
 
-      <p>We can use <code>GOTO</code> to make the computer jump to a different line instead.</p>
+      <p>We can use <code>GOTO</code> to jump to a different line instead.</p>
 
       <p>In this example, <code>start:</code> is a label. It doesn't do anything by itself, but you can jump to it. <code>cave:</code> is also a label.</p>
 
@@ -179,29 +178,27 @@ IF (mychoice$ = "north") THEN PRINT "You found a secret cave!"
 start:
 PRINT "Should we go north or south?"
 INPUT mychoice$
-IF (mychoice$ = "north") THEN GOTO cave
-PRINT "You can't go that way. Please try again."
+IF mychoice$ = "north" THEN GOTO cave
+PRINT "We can't go that way. Please try again."
 GOTO start
 
 cave:
-COLOR 15
 PRINT "You found a secret cave!"
 END
 </code></pre>
 
-      <p>Can you run this program in your head?</p>
+      <p>Can you pretend to be a computer, and run this program in your head?</p>
 
-      <p>Can you add some code so that typing in 'south' makes you go to another location?</p>
+      <p>Can you add some code so that typing in 'south' makes you go somewhere else?</p>
 
       <h3>Step 4: You are in a dark forest…</h3>
 
       <p>Now you know enough to make a game. You could make:</p>
 
       <ul>
-        <li>A game where you move around a forest</li>
-        <li>A quiz where you must get the right answer to move on to the next question</li>
-        <li>A guidebook where you type in the name of an animal and it gives you animal facts</li>
-        <li>…</li>
+        <li>An adventure where you explore a forest</li>
+        <li>A quiz where you must get the right answer</li>
+        <li>A guidebook where you can look up animals to learn about them</li>
       </ul>
 
       <p>Try making something! Remember you can always ask for help.</p>
@@ -210,27 +207,26 @@ END
 
       <h3>Extra Ideas</h3>
 
-      <p>These are only if you want an extra challenge. Look at these examples and see if you can use these ideas in your project.</p>
+      <p>If you want an extra challenge, experiment with these commands.</p>
 
-<pre><code>PLAY "c d e f g"
+<pre><code>COLOR 1
+PRINT "what color is this?"
 </code></pre>
 
 <pre><code>coins = 4
 PRINT coins
 PRINT "coins"
-PRINT "You have " + coins + " dollars"
 </code></pre>
 
-<pre><code>coins = 3
-IF coins >= 2 THEN
-  PRINT "You buy a hat."
-  coins = coins - 2
-  PRINT "You have $" + coins + " left."
-ELSE
-  PRINT "You can't afford a hat right now."
-END IF
+<pre><code>IF coins > 3 THEN PRINT "You can catch the bus."
 </code></pre>
 
+<p>To increase a number, you do this:</p>
+
+<pre><code>coins = coins + 1
+</code></pre>
+
+<p>It means: let the NEW number of coins be the OLD number of coins plus one.</p>
     </div>
   </body>
 </html>
