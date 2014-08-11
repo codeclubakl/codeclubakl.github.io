@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <title>QBasic at Code Club Auckland</title>
+    <style>
+      code {
+        background-color: black;
+        color: white;
+        padding-top: 2px;
+      }
+      pre, pre code {
+        background-color: #11F;
+      }
+      pre {
+        border: 4px solid grey;
+        max-width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="/" title="Home">Code Club Auckland</a></h1>
+        <h2>Making cool stuff with code!</h2>
+      </div>
+    </header>
+    <div class="container">
+      
+      <hr>
+
+      <h2>QBasic Cheatsheet</h2>
+
+<pre><code>
+' this line is a comment. The computer ignores it. 
+
+name$ = "Cake"
+PRINT LCASE$(name$) 'LCASE$ makes it lowercase
+PRINT UCASE$(name$) 'UCASE$ makes it capitals
+
+coins = 3
+IF coins > 1 THEN
+  PRINT "many coins"
+ELSE
+  PRINT "that's unexpected."
+END IF
+
+DO
+  PRINT "this will loop forever"
+LOOP
+
+' Press Ctrl+Break to stop a program that's 
+'stuck in a loop. This doesn't work in our online version :(
+
+X = 0
+DO
+  X = X + 1
+LOOP UNTIL X = 4
+
+FOR I = 1 TO 100
+  PRINT I
+NEXT I
+
+FOR I = 1 TO 100 STEP 5
+  PRINT I
+NEXT I
+
+' Print on the same line by using a ;
+PRINT "line 1";
+PRINT "still line 1"
+PRINT "line 2."
+
+' Subs let you make your own commands.
+' First you write what the command should do:
+SUB PrintCoins
+  COLOR 15
+  PRINT "You have"; coins; "coins left."
+  COLOR 4
+  IF coins = 10 THEN PRINT "That's enough for a hat!"
+END SUB
+
+' Now you can run all that code just by writing this:
+PrintCoins
+
+' You can pass arguments to a sub
+SUB DrawCircle (radius)
+  '....
+END SUB
+
+DrawCircle 10
+
+'TODO: graphics modes, drawing shapes.
+</code></pre>
+    </div>
+  </body>
+</html>
