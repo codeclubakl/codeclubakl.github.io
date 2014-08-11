@@ -1,0 +1,48 @@
+      <details>
+
+  <p>Take a look at this.</p>
+<pre><code>
+  coins = 7
+  PRINT coins
+  PRINT "coins"
+  PRINT coins + "coins"
+</code></pre>
+
+  <p>What's the difference between <code>coins</code> and <code>"coins"</code>?</p>
+
+  <p>Can you run this code in your brain? See if the computer gets the same result.</p>
+
+<pre><code>
+  coins = 7
+  PRINT "Do you buy an apple?"
+  INPUT a$
+  IF (a$ = "yes") THEN coins = coins - 2
+  PRINT "You have " + coins + " coins left."
+</code></pre>
+
+  <p><code>coins = coins - 2</code> is a strange thing to say! It looks impossible.</p>
+
+  <p>What is means is, the NEW value for coins should be the OLD value of coins minus 2.</p>
+
+  <p>coins = coins - 2<br>
+  coins = 7 - 2<br>
+  coins = 5</p>
+
+  <p>IF and END IF</p>
+
+<pre><code>
+  coins = 7
+  PRINT "Do you buy an apple?"
+  INPUT a$
+  IF (a$ = "yes") THEN
+      coins = coins - 2
+      PRINT "You bought an apple."
+  END IF
+  PRINT "You have " + coins + " coins left."
+</code></pre>
+
+  <p>Something special happens when THEN is the last word on a line.</p>
+
+  <p>END IF is a strange thing to say. What does it mean?</p>
+
+</details>
