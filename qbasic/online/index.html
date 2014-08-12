@@ -13,6 +13,9 @@
         background-color: grey;
         margin-top: 64px;
       }
+      .subtle {
+        color: grey;
+      }
       .emscripten { margin-left: auto; margin-right: auto; display: block; }
       textarea.emscripten { font-family: monospace; width: 80%; }
       div.emscripten { text-align: center; }
@@ -40,7 +43,13 @@
       
     </div>
     <textarea class="emscripten" id="output" rows="8"></textarea>-->
-    <div class="emscripten">WARNING: Saving does not work. If you refresh the page your work will be lost, even if you saved it.</div>
+    <div class="emscripten">
+      <p>WARNING: Saving does not work. If you refresh the page your work will be lost, even if you saved it.</p>
+
+      <p class="subtle">Unfortunately CTRL+Break and CTRL+Scroll Lock do not work. (Normally they would stop your program and return you to the editor.)</p>
+      
+      <p class="subtle">This means you can't easily escape an infinite loop :( However CTRL+C will exit your program if you are on an INPUT command.</p>
+    </div>
 
     <script type='text/javascript'>
 
