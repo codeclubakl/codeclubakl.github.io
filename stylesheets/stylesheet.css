@@ -69,6 +69,7 @@ img {
   max-width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
+  border: 2px solid #2092C0;
 }
 
 a {
