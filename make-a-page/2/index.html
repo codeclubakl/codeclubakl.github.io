@@ -27,28 +27,150 @@
         <p>CSS has a lot of curly brackets like these: { }</p>
       </div>
 
-      <h3>Background Picture</h3>
+      <h3>Changing <strike>Colours</strike> Colors</h3>
 
-      <p>We use CSS to change the background picture. Open the tab that is editing style.css (it's the one with curly brackets.)</p>
+      <p>We can change the color of anything using CSS. Open the tab that is editing style.css (it's the one with curly brackets.)</p>
 
-      <p>Add this code to the end of the file, starting on a new line.</p>
+      <p>Look at your CSS file. Can you see where the colors are set? Try changing them from 'red' and 'blue' to something else.</p>
+
+      <div class="alert">
+        <p>When we're programming, we have to spell in US English, not NZ English. That means we spell 'color' without the 'u'.</p>
+
+        <p>Luckily, only a few words are different.</p>
+      </div>
+
+      <p>Did you change the colors? Remember to save and refresh.</p>
+
+      <p>Your CSS code might look like this now:</p>
 
 <pre><code>
 body {
-    background-image: url('http://mgatland.neocities.org/countryside.jpg');
-    background-size: cover;
-    background-attachment: fixed;
+  margin: 0;
+  color: purple;
+  background-color: orange;
 }
 </code></pre>
   
-      <p>This will give your page a background picture! Remember to save and refresh first.</p>
+      <h3>Change the heading</h3>
 
-      <div class="alert">
-        <p>Tip: Click 'Save Changes', then switch to the tab that shows your website, then press Refresh.</p>
-      </div>
+      <p>Let's add a new CSS rule to make the page heading look different.</p>
 
-      
+      <p>Add this to the <b>end</b> of your CSS file, keeping what is already there.</p>
 
+<pre><code>
+h1 {
+  text-align: center;
+  font-size: 90px;
+  color: white;
+}
+</code></pre>
+
+    <p>Save your changes, switch tabs to your page and check what happened.</p>
+
+    <p>You should see that the heading has changed.</p>  
+
+    <div class="alert">
+      <p><b>About mistakes</b></p>
+
+      <p>When you are coding you will make a LOT of mistakes. Even experts make a lot of mistakes. Just missing one '>' symbol can make your page display strangely. </p>
+
+      <p>If you're at a Code Club, the mentors can help you spot mistakes. If you're by yourself, you might have to carefully compare your code with the examples. Look for tiny differences like one symbol being moved or missing.</p>
+    </div>
+
+    <h3>Let's add one more</h3>
+
+    Let's add one more CSS rule, which changes the style of the other text.
+
+<pre><code>
+  p {
+    border: 2px solid white;
+    padding: 12px;
+    background-color: maroon;
+    color: pink;
+  }
+</code></pre>    
+
+    <p>Try that out. We'll explain how it works later! First let's make the page say something more interesting.</p>
+
+    <h3>Editing your HTML</h3>
+
+    <p>Switch tabs to where you're editing your HTML file. (It has lots of pointy brackets like these: &lt; and &gt;)</p>
+
+    <p>For now, we only want to change what's "inside the body of the page".</p>
+
+    <p>"inside the body" means the text between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>. Those are the markers for the start and end of the page body.</p>
+
+    <p>Your page body probably looks like this:</p>
+
+<pre><code>
+  &lt;body&gt;
+    &lt;main&gt;
+        &lt;h1&gt;Welcome to my page&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph.&lt;/p&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+</code></pre>
+
+    <p>h1 is short for 'heading 1'. It is the biggest heading.</p>
+
+    <p>p is short for 'paragraph'</p>
+
+    <p>Try adding some more paragraphs and changing the text.</p>
+
+    <h3>Adding an image.</h3>
+
+    <p>Try adding this. Remember to put it somewhere inside the body.</p>
+
+<pre><code>
+  &lt;img src="http://mgatland.neocities.org/countryside.jpg"&gt;
+</code></pre>>
+
+    <p>Does it work? You can change it to a different image by changing the link inside the " quotation marks ". Try a Google Image Search.</p>
+
+    <div class="alert">
+      When you find an image on Google, make sure you click 'View Image' until you have a page that only shows your image, no Google stuff around the edge. Then copy the URL from the address bar.
+    </div>
+
+    <h3>So…</h3>
+
+    <p>So you're editing your HTML. You can change what the page says, and add images, but you can't change colors or add borders.</p>
+
+    <p>HTML is for the <b>content</b>, but not the <b>layout</b>.</p>
+
+    <h3>How CSS works</h3>
+
+    <p>A CSS rule controls how your HTML is displayed.</p>
+
+    <p>First we say which part of the HTML the rule is for. This could be <code>body</code> for the whole page, or <code>h1</code> for just the heading.</p>
+
+    <p>Then we use a curly bracket <b>{</b> to say 'the instructions start now.'</p>
+
+    <p>an instruction looks like this:</p>
+
+<pre><code>
+  color: white;
+</code></pre>
+
+    <p>Note it has a colon in the middle and a semi-colin at the end.</p>
+
+    <p>At the end, you need to say you've finished by putting a closing curly bracket <b>}</b></p>
+
+    <p>So here's an example of a complete CSS rule:</p>
+
+<pre><code>
+img {
+  border: 10px dashed green;
+  margin: 30px;
+}
+</code></pre>
+
+  <p>Can you tell what it will change?</p>
+
+  <h3>Bloop</h3>
+
+  <p>Hey that's enough instructions, can you make an awesome webpage? Our mentors will help you (if you're at a Code Club! Otherwise you'll have to do a Google search for your question.)</p>
+
+  <p>Here is my neocities page, if you want some ideas: <a href="http://mgatland.neocities.org">mgatland.neocities.org</a></p>
     </div>
   </body>
 </html>
