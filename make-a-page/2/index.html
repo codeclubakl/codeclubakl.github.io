@@ -19,24 +19,20 @@
 
       <h2>Webpages #2</h2>
 
-      <p>Hi, if you're here you should have a neocities account, and 3 tabs open in your browser: one to edit html, one to edit css, and one to view your website.</p>
-
-      <div class="alert">
-        <p>Tip: Which is which?</p>
-        <p>HTML has a lot of pointy brackets like these: &lt; &gt;</p>
-        <p>CSS has a lot of curly brackets like these: { }</p>
-      </div>
+      <p>Hi, if you're here you should have a neocities account, and 2 tabs open in your browser: one to edit index.html, and one to view your website.</p>
 
       <h3>Changing <strike>Colours</strike> Colors</h3>
 
-      <p>We can change the color of anything using CSS. Open the tab that is editing style.css (it's the one with curly brackets.)</p>
+      <p>We can change the color of anything using CSS.</p>
 
-      <p>Look at your CSS file. Can you see where the colors are set? Try changing them from 'red' and 'blue' to something else.</p>
+      <p>The CSS is marked by a start tag like this: <code>&lt;style&gt;</code> and and end tag like this: <code>&lt;/style&gt;</code>. The code between those tags is the CSS.</p>
+
+      <p>Once you've found the CSS, you'll see the words 'red' and 'blue'. Try changing them to other colors, save your page and see what happens.</p>
 
       <div class="alert">
         <p>When we're programming, we have to spell in US English, not NZ English. That means we spell 'color' without the 'u'.</p>
 
-        <p>Luckily, only a few words are different.</p>
+        <p>Luckily, most words are still spelt the same way.</p>
       </div>
 
       <p>Did you change the colors? Remember to save and refresh.</p>
@@ -45,7 +41,6 @@
 
 <pre><code>
 body {
-  margin: 0;
   color: purple;
   background-color: orange;
 }
@@ -55,7 +50,7 @@ body {
 
       <p>Let's add a new CSS rule to make the page heading look different.</p>
 
-      <p>Add this to the <b>end</b> of your CSS file, keeping what is already there.</p>
+      <p>Add these lines to your CSS, just above line that says <code>&lt;/style&gt;</code>.</p>
 
 <pre><code>
 h1 {
@@ -92,66 +87,68 @@ h1 {
 
     <p>Try that out. We'll explain how it works later! First let's make the page say something more interesting.</p>
 
-    <h3>Editing your HTML</h3>
+    <h3>Editing your page body</h3>
 
-    <p>Switch tabs to where you're editing your HTML file. (It has lots of pointy brackets like these: &lt; and &gt;)</p>
+    <p>The "body" of the page controls what words appear on your website.</p>
 
-    <p>For now, we only want to change what's "inside the body of the page".</p>
+    <p>The body starts with a <code>&lt;body&gt;</code> tag and ends with a <code>&lt;/body&gt;</code> tag.</p>
 
-    <p>"inside the body" means the text between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>. Those are the markers for the start and end of the page body.</p>
+    <p>Tags are how we code in HTML. A tag is a word with pointy brackets on each end. Tags mark special parts of the file.</p>
 
     <p>Your page body probably looks like this:</p>
 
 <pre><code>
   &lt;body&gt;
-    &lt;main&gt;
-        &lt;h1&gt;Welcome to my page&lt;/h1&gt;
-        &lt;p&gt;This is a paragraph.&lt;/p&gt;
-    &lt;/main&gt;
+      &lt;h1&gt;Welcome to my page&lt;/h1&gt;
+      &lt;p&gt;This is a paragraph.&lt;/p&gt;
   &lt;/body&gt;
 </code></pre>
+  
+    <p>h1 is short for 'heading 1'. It represents the biggest (most important) heading on your page.</p>
 
-    <p>h1 is short for 'heading 1'. It is the biggest heading.</p>
+    <p>p is short for 'paragraph'.</p>
 
-    <p>p is short for 'paragraph'</p>
+    <p>You can add another paragraph by adding a new line that has a <code>&lt;p&gt;</code> tag at the start, and a &lt;/p&gt; tag at the end.</p>
 
-    <p>Try adding some more paragraphs and changing the text.</p>
+    <div class="alert">
+      <p>Did you notice the difference between a start tag and and an end tag? End tags have a slash.</p>
+    </div>
 
-    <h3>Adding an image.</h3>
+    <h3>Adding an Image</h3>
 
-    <p>Try adding this. Remember to put it somewhere inside the body.</p>
+    <p>Try adding this somewhere inside your page body:</p>
 
 <pre><code>
   &lt;img src="http://mgatland.neocities.org/countryside.jpg"&gt;
-</code></pre>>
+</code></pre>
 
-    <p>Does it work? You can change it to a different image by changing the link inside the " quotation marks ". Try a Google Image Search.</p>
+    <p>An img tag shows an image. You can change the URL to show a different image instead.</p>
 
-    <div class="alert">
-      When you find an image on Google, make sure you click 'View Image' until you have a page that only shows your image, no Google stuff around the edge. Then copy the URL from the address bar.
-    </div>
+<!-- todo: show how to grab images from Google Image Search?-->
 
-    <h3>So…</h3>
+    <h3>About HTML</h3>
 
-    <p>So you're editing your HTML. You can change what the page says, and add images, but you can't change colors or add borders.</p>
+    <p>The stuff with pointy brackets is HTML. Using HTML, you can change what the page says, and add images, but you can't change colors or add borders.</p>
 
-    <p>HTML is for the <b>content</b>, but not the <b>layout</b>.</p>
+    <p>HTML is for <b>what the page says</b>, but not <b>how it should look</b>.</p>
+
+    <p>You can put HTML tags inside each other. For example, you have a h1 heading inside your page body.</p>
 
     <h3>How CSS works</h3>
 
     <p>A CSS rule controls how your HTML is displayed.</p>
 
-    <p>First we say which part of the HTML the rule is for. This could be <code>body</code> for the whole page, or <code>h1</code> for just the heading.</p>
+    <p>First we say what part of the HTML the rule is for. This could be <code>body</code> for the whole page, or <code>h1</code> for just the heading.</p>
 
     <p>Then we use a curly bracket <b>{</b> to say 'the instructions start now.'</p>
 
-    <p>an instruction looks like this:</p>
+    <p>Then we have the instructions, like this:</p>
 
 <pre><code>
-  color: white;
+  color: blue;
 </code></pre>
 
-    <p>Note it has a colon in the middle and a semi-colin at the end.</p>
+    <p>Note it has a colon in the middle and a semi-colon at the end.</p>
 
     <p>At the end, you need to say you've finished by putting a closing curly bracket <b>}</b></p>
 
@@ -164,13 +161,35 @@ img {
 }
 </code></pre>
 
-  <p>Can you tell what it will change?</p>
+      <div class="alert">
+        <p>Tip: Which is which?</p>
+        <p>HTML has a lot of pointy brackets like these: &lt; &gt;</p>
+        <p>CSS has a lot of curly brackets like these: { }</p>
+        <p>CSS goes in the 'style' section. HTML mostly goes in the 'body' section.</p>
+      </div>
 
   <h3>Bloop</h3>
 
   <p>Hey that's enough instructions, can you make an awesome webpage? Our mentors will help you (if you're at a Code Club! Otherwise you'll have to do a Google search for your question.)</p>
 
-  <p>Here is my neocities page, if you want some ideas: <a href="http://mgatland.neocities.org">mgatland.neocities.org</a></p>
+  <p>Maybe make a gallery of photos with 5 photos.</p>
+
+  <p>Here are some other ideas that might help:</p>
+
+  <h2>make images centered</h2>
+
+<pre><code>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</code></pre>
+
+  <h2>Put images inside a block</h2>
+
+
+
     </div>
   </body>
 </html>

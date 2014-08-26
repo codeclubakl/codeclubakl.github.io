@@ -19,15 +19,15 @@
 
       <h2>Webpages</h2>
 
-      <p>We're going to make a web page on the internet.</p>
+      <p>We're going to put a new web page on the internet. We'll use Neocities to host our web page.</p>
+
+      <p>Here's an example page I made: <a href="http://mgatland.neocities.org">Gargoyles fan page</a>. Here's an example from someone else: <a href="http://gemmasamazing.neocities.org/">To infinity and Beyond</a>.</p>
 
       <!-- it takes about 20 minutes to complete this page -->
 
-      <p>You can make a page about something that you're interested in. First we have to get set up.</p>
+      <p>Neocities will give us an example page, but we are going to delete it and put up our own example instead. Because ours is better.</p>
 
-      <p>We're going to make a a new website on Neocities</p>
-
-      <p>Neocities will give us an example page, but we are going to delete it and put up our own instead. Because ours is better.</p>
+      <p>Once we're set up, you'll build your own page.</p>
 
       <p>Let's go!</p>
 
@@ -40,48 +40,44 @@
         <li>Once you finish you will see a page that says 'My Website' at the top center.</li>
       </ul>
 
-      <h3>Add a CSS file to your Neocities</h3>
+      <h3>Delete some files</h3>
+
+      <p>This is the Neocities dashboard. You can hold your mouse over a file and choose 'edit' or 'delete'.</p>
 
       <ul>
-        <li>Right-click on <a href="example/style.css">this link</a> and <b>save</b> the file style.css to your computer.</li>
-        <li>In Neocities, click Upload and upload that same file (style.css)</li>
-        <li>In Neocities, delete <b>cat.png</b> and <b>not_found.html</b>. We do not want those files!</li>
-        <li>You now have only 2 files: index.html and style.css.</li>
+        <li><b>Delete</b> <code>cat.png</code> and <code>not_found.html</code>. We do need those!</li>
+        <li>You now have only 1 file: <code>index.html</code>.</li>
       </ul>
 
-      <img src="index_and_style.png">
+      <img src="only_one_file.png">
 
       <h3>Editing</h3>
 
-      <p>I like to work with three tabs open.</p>
+      <p>I like to work with two tabs open.</p>
 
-      <p>Tab 1: Open your website in a new tab by right-clicking on the big red link under 'My Website'.</p>
+      <p>Tab 1: Open your website in a new tab by right-clicking on the big red link under 'My Website' and choosing 'Open link in new tab'.</p>
 
       <img src="open_homepage.png">
 
-      <p>This tab is where you will look at your page.</p>
+      <p>This tab is where you will check how your page looks.</p>
 
       <div class="alert">
-        <p>When you see your page, it will be a white page with some instructions on it. Just ignore it - we are going to delete everything it says and start again.</p>
+        <p>Right now, your page will be a white page with some instructions on it. You can ignore those instructions. We are going to delete them in a moment.</p>
       </div>
 
-      <p>Tab 2: Hold your mouse over index.html and the word 'edit' appears. Right click and open in a new tab.</p>
+      <p>Tab 2: Back on the Neocities dashboard, Hold your mouse over index.html and the word 'edit' appears. Right click and open in a new tab.</p>
 
       <img src="edit_index.png">
 
-      <p>This tab is where you edit your page.</p>
+      <p>This opens a tab that says 'Editing index.html' at the top. This is where you can change your page.</p>
 
-      <p>Tab 3: Edit style.css the same way you did for index.html.</p>
-
-      <img src="edit_style.png">
-
-      <p>You should have 3 tabs: one to view your site, one to edit index.html and one to edit style.css.</p>
+      <p>Now you have two tabs that you will use: One to look at your site, and one to edit your site.</p>
 
       <h3>Edit your HTML page</h3>
 
       <ul>
         <li>Go to the tab for index.html</li>
-        <li>Delete everything until it's empty. That's right, delete all the text until it's an empty grey box!</li>
+        <li>Delete everything in the blue area until it's empty. That's right, delete all the code until it's an empty grey box!</li>
         <li>Then paste this in instead:</li>
       </ul>
 
@@ -89,13 +85,16 @@
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
-    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/style.css&quot;&gt;
+    &lt;style&gt;
+      body {
+        color: red;
+        background-color: blue;
+      }
+    &lt;/style&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;main&gt;
-        &lt;h1&gt;Welcome to my page&lt;/h1&gt;
-        &lt;p&gt;This is a paragraph.&lt;/p&gt;
-    &lt;/main&gt;
+      &lt;h1&gt;Welcome to my page&lt;/h1&gt;
+      &lt;p&gt;This is a paragraph.&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
