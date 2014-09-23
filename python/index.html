@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <title>Python at Code Club Auckland</title>
+    <style>
+   
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="/" title="Home">Code Club Auckland</a></h1>
+        <h2>Making cool stuff with code!</h2>
+      </div>
+    </header>
+    <div class="container">
+      
+      <hr>
+
+      <h2>Writing with Python</h2>
+
+      <p>Go to <a href="http://repl.it/languages/Python">http://repl.it/languages/Python</a></p>
+
+      <h3>Working in repl.it</h3>
+
+      <p>You should see a white area on the left, and a dark area on the right.</p>
+
+      <p>Write your code on the left, then click the 'play' button to run your code.</p>
+
+<pre><code>print("Hello")
+</code></pre>
+
+      <p>Did that work? It should bring "Hello" (without speech marks) to the console.</p>
+
+      <p>If you make a mistake, you'll get an error message instead. Try leaving out one of the speech marks, like this:</p>
+
+<pre><code>print("Hello)
+</code></pre>
+
+      <p>Run that, and you will get a nice error message. (It tries to tell you what is wrong, but it's not always great at explaining.)</p>
+
+      <p>Cool, now you know Python!</p>
+
+      <h3>ASCII Art</h3>
+
+      <p>Let's try printing a picture made out of letters. (That's ASCII art).</p>
+
+<pre><code>print("A picture of a dog...")
+print(" 0____  ")
+print("  ||||  ")
+</code></pre>
+
+    <p>You can kind of do math with text as well:</p>
+
+<pre><code>print("hello" * 5)
+</code></pre>
+
+  <p>Try it.</p>
+
+  <p>Some kinds of math won't work though:</p>
+
+<pre><code>print("hello" - 3)
+</code></pre>
+
+  <p>You can't do that, you'll get an error message. I guess that makes sense.</p>
+
+  <div class="alert">
+    <b>Challenge</b>
+    <p>What does the following program print to the screen? See if you can guess correctly before running the program.</p>
+
+<pre><code>print("ha "*4)
+print("ba" + "na"*2)
+print("He" + "l"*2 + "o" + "!"*10)
+</code></pre>
+
+  </div>
+
+      <h3>ASCII patterns</h3>
+
+      <p>Now that you know how to do calculations on text, now what? Why is it useful? Well, let’s say you wanted to draw an ASCII art rectangle that is 30 characters long and 3 characters high. You could either draw it the hard way, like this:</p>
+      <pre class="language-python"><code>print(&quot;##############################&quot;)
+print(&quot;##############################&quot;)
+print(&quot;##############################&quot;)</code></pre>
+      <p>Or you could save time and draw it the easy way, like this:</p>
+      <pre class="language-python"><code>print(&quot;#&quot; * 30)
+print(&quot;#&quot; * 30)
+print(&quot;#&quot; * 30)</code></pre>
+      <p>Both give you exactly the same rectangle printed to the screen.</p>
+
+      <p>You could even use calculations to make interesting patterns, like this wave:</p>
+      <pre class="language-python"><code>print(&quot;/\  &quot;*10)
+print(&quot;  \/&quot;*10)</code></pre>
+
+
+  <div class="alert">
+    <b>Challenge: Code a Scarf</b>
+    <p>Your best friend is having an 11th birthday party, and as a gift you've decided to code them a scarf! Use calculations wherever possible to make your own scarf pattern.</p>
+    <p>If you're feeling generous, you could even code them a cake (including candles) to go with it!</p>
+
+    <p>Scarf:</p>
+
+      <pre style="color: yellow; background-color: #187BBE;">-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
+-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|</pre>
+
+    <p>Cake:</p>
+
+      <pre style="color: yellow; background-color: #187BBE;"> .  .  .  .  .  .  .  .  .  . 
+ i  i  i  i  i  i  i  i  i  i 
+##############################
+==============================
+##############################
+==============================
+##############################</pre>
+
+    </div>
+
+    <p>Credits: This project was based on one from Code Club World.</p>
+  </body>
+</html>
