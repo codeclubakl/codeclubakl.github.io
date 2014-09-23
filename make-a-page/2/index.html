@@ -202,22 +202,27 @@ div {
 
 <pre><code>
 div {
-  padding: 20px;
+  border: 2px solid black;
+  padding: 10px;
 }
 </code></pre>
 
-  <div style="border: 2px solid black; padding: 20px;">this has a border and padding.</div>
+  <div style="border: 2px solid black; padding: 10px;">this has a border and padding.</div>
 
   <h2>Putting boxes inside boxes</h2>
 
-  <div style="border: 2px solid black; padding: 20px;">
-    <div style="border: 2px solid red; padding: 20px; margin: 20px;">
+  <br>
+
+  <div style="border: 2px solid black; padding: 10px;">
+    <div style="border: 2px solid red; padding: 10px;">
     hello
   </div>
-  <div style="border: 2px solid red; padding: 20px; margin: 20px;">
+  <div style="border: 2px solid red; padding: 10px;">
     hello
   </div>
   </div>
+
+  <br>
 
   <p>... or <b>bold</b> text inside paragraphs.</p>
 
@@ -233,21 +238,40 @@ div {
 &lt;a href=&quot;http://www.google.com&quot;&gt;Here is a link.&lt;/a&gt;
 </code></pre>
 
+  <p>Pay close attention to where the pointy brackets go! The href part is <b>inside</b> the first tag.</p>
+
   <h2>Making one thing different from the others with CSS classes</h2>
 
-  <p>......</p>
+  <p>What if you want one paragraph to be red, and another one to be blue?</p>
+
+  <p>You can give any HTML tag a 'class', which is like an extra label. You make up the label. Here I called it 'loud'</p>
+
+<pre><code>
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p class=&quot;loud&quot;&gt;Here is another.&lt;/p&gt;
+</code></pre>
+
+<p>Now we can write a CSS rule that applies to anything that has that class.</p>
+
+<pre><code>
+.loud {
+  color: red;
+}
+</code></pre>
+
+<p>Note that there is a dot in front of the word "loud". That's to show that it's not a tag name, it's a class name.</p>
+
+<p>You can make up as many classes as you want. Classes don't change anything on their own. You need to write a CSS rule for the class to make it do something.</p>
 
   <h2>Internet Safety</h2>
 
-  <p>...different for different people. Ask before sharing </p>
+  <p>...is different for different people.</p>
+
+  <p>Ask before sharing someone else's personal information or their photo.</p>
 
   <h2>Using other people's work</h2>
 
   <p>Getting permission, crediting sources. Why Creative Commons makes this so easy.</p>
-
-  <h2>Other current events</h2>
-
-  <p>there's a Gather workshop coming up on 20 September for $30+GST in Wellington.</p>
 
     </div>
   </body>
