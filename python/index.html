@@ -42,7 +42,9 @@
 <pre><code>print("Hello)
 </code></pre>
 
-      <p>Run that, and you will get a nice error message. (It tries to tell you what is wrong, but it's not always great at explaining.)</p>
+      <p><b>Error!</b></p>
+
+      <p>That won't work. An error message appears, and tries to tell you what the problem is. (But it's not always good at explaining.)</p>  
 
       <p>Cool, now you know Python!</p>
 
@@ -55,19 +57,31 @@ print(" 0____  ")
 print("  ||||  ")
 </code></pre>
 
-    <p>You can kind of do math with text as well:</p>
+    <p>Does it look like a dog? Maybe you can draw something better.</p>
+
+    <h3>Math with text</h3>
+
+    <p>You can kind of do math with text:</p>
 
 <pre><code>print("hello" * 5)
 </code></pre>
 
   <p>Try it.</p>
 
-  <p>Some kinds of math won't work though:</p>
+  <p>If we add an empty space inside the speech marks, we'll get a space between the words. Can you see where I've added the space?</p>
+
+<pre><code>
+print("hello " * 5)
+</code></pre>
+
+  <p>Some kinds of math won't work:</p>
 
 <pre><code>print("hello" - 3)
 </code></pre>
 
-  <p>You can't do that, you'll get an error message. I guess that makes sense.</p>
+  <p><b>Error!</b></p>
+
+  <p>You can't do that. You'll have to delete that line before we carry on.</p>
 
   <div class="alert">
     <b>Challenge</b>
@@ -83,11 +97,13 @@ print("He" + "l"*2 + "o" + "!"*10)
       <h3>ASCII patterns</h3>
 
       <p>Now that you know how to do calculations on text, now what? Why is it useful? Well, let’s say you wanted to draw an ASCII art rectangle that is 30 characters long and 3 characters high. You could either draw it the hard way, like this:</p>
-      <pre class="language-python"><code>print(&quot;##############################&quot;)
+      <pre class="language-python"><code>#stop, don't actually type this out!
+print(&quot;##############################&quot;)
 print(&quot;##############################&quot;)
 print(&quot;##############################&quot;)</code></pre>
       <p>Or you could save time and draw it the easy way, like this:</p>
-      <pre class="language-python"><code>print(&quot;#&quot; * 30)
+      <pre class="language-python"><code>#this is the easy way!
+print(&quot;#&quot; * 30)
 print(&quot;#&quot; * 30)
 print(&quot;#&quot; * 30)</code></pre>
       <p>Both give you exactly the same rectangle printed to the screen.</p>
@@ -96,6 +112,7 @@ print(&quot;#&quot; * 30)</code></pre>
       <pre class="language-python"><code>print(&quot;/\  &quot;*10)
 print(&quot;  \/&quot;*10)</code></pre>
 
+    <p>That was <b>much easier</b> than typing out the whole pattern!</p>
 
   <div class="alert">
     <b>Challenge: Code a Scarf</b>
@@ -110,7 +127,8 @@ print(&quot;  \/&quot;*10)</code></pre>
 
     <p>Cake:</p>
 
-      <pre style="color: yellow; background-color: #187BBE;"> .  .  .  .  .  .  .  .  .  . 
+      <pre style="color: yellow; background-color: #187BBE;">
+ .  .  .  .  .  .  .  .  .  . 
  i  i  i  i  i  i  i  i  i  i 
 ##############################
 ==============================
