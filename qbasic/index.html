@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='utf-8'>
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
@@ -30,10 +30,8 @@
       </div>
     </header>
     <div class="container">
-      
-      <hr>
 
-      <h2>QBasic Adventure</h2>
+      <h1>QBasic Adventure</h1>
 
       <p>QBasic is a programming language from the 80s. It's not used much any more, but it used to a very popular language for beginners.</p>
 
@@ -43,7 +41,7 @@
 
       <hr>
 
-      <h3>Installing on Windows</h4>
+      <h2>Installing on Windows</h2>
 
       <p>1. Download the windows QBasic zip<br><a href="/qbasic/qbasic-dosbox-win.zip">http://codeclubakl.github.io/qbasic/qbasic-dosbox-win.zip</a><br>
       2. Extract the whole zip file ('Extract all...')<br>
@@ -62,7 +60,7 @@
 
       </div>
 
-      <h3>Installing on a Mac (Apple OS X)</h3>
+      <h2>Installing on a Mac (Apple OS X)</h2>
 
       <p>1. Download the mac QBasic zip<br>
       <a href="/qbasic/qbasic-dosbox-mac.zip">http://codeclubakl.github.io/qbasic/qbasic-dosbox-mac.zip</a><br>
@@ -89,11 +87,11 @@
 
       </div>
 
-      <h3>Installing on Linux</h3>
+      <h2>Installing on Linux</h2>
 
       <p>We haven't prepared an easy Linux download yet. You'll have to install DOSBox, download QBasic 4.5, then run DOSBox from the terminal giving it the path to qb.exe. Ask a mentor for help if you want.</p>
 
-      <h3>Use QBasic online (for a Chromebook or any computer)</h3>
+      <h2>Use QBasic online (for a Chromebook or any computer)</h2>
 
       <p>Click on this link to use QBasic online:</p>
 
@@ -110,14 +108,14 @@
 
       <hr>
 
-      <h3>The QBasic Editor</h3>
+      <h2>The QBasic Editor</h2>
 
       <p>If it's working you will see this:</p>
 
       <img class="printtiny" src="/qbasic/qbasic.png">
 
-      <h3>
-      <a name="your-first-program" class="anchor" href="#your-first-program"><span class="octicon octicon-link"></span></a>Try it out</h3>
+      <h2>
+      <a name="your-first-program" class="anchor" href="#your-first-program"><span class="octicon octicon-link"></span></a>Try it out</h2>
 
       <p>Type this into the editor:</p>
 
@@ -135,7 +133,7 @@ PRINT "Hello!"
 
       <p>Well done! Press a key to go back to the blue editor.</p>
 
-      <h3>Making an Adventure Game</h3>
+      <h2>Making an Adventure Game</h2>
 
       <img class="printtiny" src="forest.jpg">
 
@@ -149,7 +147,7 @@ PRINT "Hello!"
         <li>Do something different based on their choice.</li>
       </ul>
 
-      <h3>Step 1: Ask a question</h3>
+      <h2>Step 1: Ask a question</h2>
 
 <pre><code>CLS
 PRINT "Should we go north or south?"
@@ -165,7 +163,7 @@ PRINT "OK, let's go."
 
       <p>It saves your answer into a variable called <code>mychoice$</code>. We will use this next.</p>
 
-      <h3>Step 2: React to the user's choice</h3>
+      <h2>Step 2: React to the user's choice</h2>
 
       <p>This is the same code as above, with one line added.</p>
 
@@ -180,8 +178,8 @@ IF mychoice$ = "north" THEN PRINT "You found a secret cave!"
 
       <p>Press F5 to run the program. Can you find the secret cave?</p>
 
-      <h3>
-      <a name="jumping-around" class="anchor" href="#jumping-around"><span class="octicon octicon-link"></span></a>Step 3: Jumping around</h3>
+      <h2>
+      <a name="jumping-around" class="anchor" href="#jumping-around"><span class="octicon octicon-link"></span></a>Step 3: Jumping around</h2>
 
       <p>Normally, the computer runs the program line-by-line.</p>
 
@@ -206,7 +204,7 @@ END
 
       <p>Can you add some code so that typing in 'south' makes you go somewhere else?</p>
 
-      <h3>Step 4: You are in a dark forest…</h3>
+      <h2>Step 4: You are in a dark forest…</h2>
 
       <p>Now you know enough to make a game. You could make:</p>
 
@@ -220,7 +218,7 @@ END
 
       <hr>
 
-      <h3>Extra Ideas</h3>
+      <h2>Extra Ideas</h2>
 
       <p>If you want an extra challenge, experiment with these commands.</p>
 
@@ -243,6 +241,9 @@ IF coins > 3 THEN PRINT "You can catch the bus."
 </code></pre>
 
 <p>It means: let the NEW number of coins be the OLD number of coins plus one.</p>
+
+      <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
+
     </div>
   </body>
 </html>
