@@ -4,11 +4,61 @@
     <meta charset='utf-8'>
     <title>TV Concept Generator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    body {
+        background-color: #aaaaff;
+    }
+
+    h2 {
+        color: blue;
+    }
+    </style>
   </head>
   <body>
     <h1>TV concept generator</h1>
     <h2 id="display-area">Click the button!</h2>
     <button id="next-page-button">Next idea</button>
-    <script src="script.js"></script>
+    <script>
+      //Hello! This is the JavaScript.
+      //You can skip this part for now. Jump ahead down to where I say 'LOOK HERE'
+
+      var button = document.getElementById("next-page-button");
+
+      var showThisMessage = function (message) {
+        var displayArea = document.getElementById("display-area");
+        displayArea.innerHTML = message;
+      };
+
+      var makeAndShowConcept = function () {
+        var randomConcept = getRandomConcept();
+        showThisMessage(randomConcept);
+      };
+
+      var pickRandom = function (list) {
+        return list[Math.floor(Math.random()*list.length)];
+      };
+
+      button.addEventListener('click', makeAndShowConcept);
+
+      // ***
+      // LOOK HERE
+      // ***
+      // Hello again! This is the part we are working on.
+
+      var getRandomConcept = function () {
+        var people = [];
+        people.push("time traveller");
+        people.push("school teacher");
+
+        var jobs = [];
+        jobs.push("runs a hotel");
+        jobs.push("solves mysteries");
+
+        var space = " ";
+
+        var myConcept = "A " + pickRandom(people) + " who " + pickRandom(jobs);
+        return myConcept;
+      };
+    </script>
   </body>
 </html>
