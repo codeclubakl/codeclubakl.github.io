@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Lots of Boxes</title>
+    <style>
+
+    body {
+        background-color: lightblue;
+    }
+
+    #box-area {
+      width:500px;
+      height: 500px;
+      border: 1px solid black;
+    }
+
+    .box {
+      width: 48px;
+      height: 48px;
+      border: 1px solid black;
+      float: left;
+      background-color: black;
+    }
+
+    .box.on {
+      background-color: yellow;
+    }
+
+    </style>
+  </head>
+  <body>
+    <h1>Lots of Boxes</h1>
+    <div id="box-area">
+    </div>
+    <p>Click on the boxes.</p>
+    <button id="box-button">Add a box</button>
+    <script>
+      //Hello! This is the start of the JavaScript.
+
+      var boxArea = document.getElementById("box-area");
+      var boxes = [];
+
+      var isBoxOn = function(box) {
+        return (box.classList.contains("on"));
+      }
+
+      var switchBox = function (box) {
+        //if it's on, turn it off
+        if (isBoxOn(box)) {
+          box.classList.remove("on");
+
+        //otherwise, if it's off, turn it on
+        } else {
+          box.classList.add("on");          
+        }        
+      }
+
+      var clickOnBox = function (event) {
+        var box = event.target;
+
+        //make sure it's really a box
+        //If it's not a box, just stop.
+        if (!box.classList.contains("box")) return;
+
+        //otherwise, switch it
+        switchBox(box);
+
+      }
+      boxArea.addEventListener('click', clickOnBox);
+
+      var addBox = function () {
+        var box = document.createElement("div");
+        box.classList.add("box");
+        boxArea.appendChild(box);
+        boxes.push(box);
+      }
+
+      var button = document.getElementById("box-button");
+      button.addEventListener('click', addBox);
+
+      var start = function () {
+        addBox();
+      }
+      
+      start();
+
+    </script>
+  </body>
+</html>
