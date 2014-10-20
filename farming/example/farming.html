@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Farming</title>
+    <style>
+
+    body {
+        background-color: #FFF9AA;
+    }
+
+    h2 {
+        color: blue;
+    }
+
+    #farm-area {
+      border: 1px solid brown;
+      height: 148px;
+    }
+
+    .apple-tree {
+      width: 64px;
+      height: 128px;
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .apple-tree.small {
+      background-color: black;
+    }
+    .apple-tree.medium {
+      background-color: brown;
+    }
+    .apple-tree.large {
+      background-color: green;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Exciting Apple Farm</h1>
+    <div id="farm-area">
+    </div>
+    <h2 id="money-display">(money will show here)</h2>
+
+    <button id="buy-button">Buy an apple tree</button>
+
+    <script>
+      "use strict";
+      //Hello! This is the JavaScript.
+
+      var farmArea = document.getElementById("farm-area");
+
+      var money = 0;
+      var moneyForHarvest = 5;
+
+      var updateMoneyDisplay = function () {
+        var moneyDisplay = document.getElementById("money-display");
+        moneyDisplay.innerHTML = "$" + money;
+      };
+
+      var harvest = function (event) {
+        var plant = event.target;
+        if (plant.classList.contains("large")) {
+          plant.classList.remove("large");
+          plant.classList.add("small");
+          //make it start growing again
+          setTimeout(grow1, 2000, plant);
+          //pay me!
+          money = money + moneyForHarvest;
+          //show my new balance
+          updateMoneyDisplay();
+        }
+      }
+      farmArea.addEventListener('click', harvest);
+
+      //grow a plant from medium to large
+      var grow2 = function (plant) {
+        plant.classList.remove("medium");
+        plant.classList.add("large");
+      }
+
+      //grow a plant from small to medium
+      var grow1 = function (plant) {
+        plant.classList.remove("small");
+        plant.classList.add("medium");
+        setTimeout(grow2, 2000, plant);
+      }
+
+      var addPlant = function (plantType) {
+        var plant = document.createElement("div");
+        plant.classList.add(plantType);
+        plant.classList.add("small");
+        farmArea.appendChild(plant);
+        //start the plant growing
+        setTimeout(grow1, 2000, plant);
+      }
+
+      var buyPlant = function () {
+        //You have to write this function yourself.
+        alert("Oops, this doesn't work yet.");
+      };
+
+      var button = document.getElementById("buy-button");
+      button.addEventListener('click', buyPlant);
+
+      addPlant("apple-tree"); //you start with one plant
+      updateMoneyDisplay(); //show your correct money balance
+
+    </script>
+  </body>
+</html>
