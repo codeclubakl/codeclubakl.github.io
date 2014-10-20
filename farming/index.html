@@ -135,13 +135,37 @@ updateMoneyDisplay(); //show my new balance
 
       <p>Good luck with your farm!</p>
 
-      <h2>Part 5: things to think about</h2>
+      <p>CHECK: You can click the button to add new plants to your farm.</p>
 
-      <p>That's the end of this activity, but here are some ideas for extending it.</p>
+      <p>CHECK: Buying a new plant costs money.</p>
 
-      <p>Imagine if you wanted to have a new type of plant in the farm. Maybe it costs more, but also gives more money when harvested.</p>
+      <p>CHECK: You can't buy a plant unless you have enough money.</p>
 
-      <p>What would you need to add? A new button, some new images...</p>
+      <h2>Part 5: A new kind of plant</h2>
+
+      <p>Add a new kind of plant to the farm. This will take several steps, but you can do it one step at a time.</p>
+
+      <p>Step 1: Add a new button to the HTML. Look for the HTML that makes the first button, and copy it – but you have to <em>change the id</em> so we can give it a different job.</p>
+
+      <p>CHECK that your new button appears on the page.</p>
+
+      <p>The button won't do anything yet.</p>
+
+      <p>Step 2: Find the JavaScript that causes the original button to call a function. (It's two lines, near the bottom.) Copy it and make a new version for your new button. For now, it can just call the same function as the old button.</p>
+
+      <p>(You'll need to change the name of the var from button to button2, or something. And you'll need to give it the id for your new button instead of the old "buy-button".)</p>
+
+      <p>CHECK that your new button works. It should buy an apple tree, just like the old button does.</p>
+
+      <p>Step 3: Make a new function by copying the <code>buyPlant</code> function. Change its name, and change it so instead of calling <code>addPlant("apple-tree")</code> it calls <code>addPlant("something-else")</code> (you choose the something-else).</p>
+
+      <p>This won't work yet – your new plant is invisible so you can't see it.</p>
+
+      <p>Step 4: Add CSS for the new plant. Copy all the CSS that mentions apple-tree and make a new set of CSS for your new plant. Change the size or something so you can tell which is which.</p>
+
+      <p>CHECK that your new button now buys the new plant.</p>
+
+      <p>What's left? Make the new plant different in some way - it could use different images or be a different width and height. It could cost a different amount.</p>
 
       <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
     </div>
