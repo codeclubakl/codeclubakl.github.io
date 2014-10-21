@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <title>Five Star at Code Club Auckland</title>
+    <style>
+   
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="/" title="Home">Code Club Auckland</a></h1>
+        <h2>Making cool stuff with code!</h2>
+      </div>
+    </header>
+    <div class="container">
+      <h1>Five Star</h1>
+
+      <p>We're using JavaScript to make things happen when you click on parts of our webpage.</p>
+
+      <p>(This activity uses jQuery. jQuery gives us some nice, short commands for making JavaScript work with the HTML page.)</p>
+
+      <h2>What skills do I need?</h2>
+
+      <p>It helps if you know the difference between HTML, CSS and JavaScript.</p>
+
+      <p>We recommend doing our <a href="/make-a-page/">Make a Page</a> and <a href="/idea-generator/">Idea Generator</a> projects before this one.</p>
+
+      <h2>Part 1: Put fivestar.html on Neocities</h2>
+
+      <p>Download this file to your computer. Right click and choose 'Save Link As…' or 'Download linked file as…'</p>
+
+      <p>Download this: <a href="example/fivestar.html" target="_blank">fivestar.html</a></p>
+
+      <div class="alert">
+        <p>1. Download the file linked above.</p>
+        <p>2. Go to <a href="http://neocities.org" target="_blank">neocities.org</a> and log in (or create a new account)</p>
+        <p>3. In Neocities, go to the dashboard.</p>
+        <p>4. <em>Upload</em> the fivestar.html file from your computer to Neocities.</p>
+        <p>5. In Neocities, <em>view</em> fivestar.html and make sure it loads.</p>
+        <p>6. You should see a page with some stars and a button.</p>
+      </div>
+
+      <p>Now you have your own copy of the page.</p>
+
+      <div class="alert">
+        <p>From the Neocities dashboard, <em>edit</em> fivestar.html.</p>
+        <p>I recommend having one browser tab for editing, and one for viewing the page.</p>
+        <p>Remember, each time you make a change you need to save (on the editing page) and then refresh (on the viewing page)</p>
+      </div>
+
+      <p>Cool, we're ready to make some changes.</p>
+
+      <h2>Part 2: Make the button add a star</h2>
+
+      <p>We use JavaScript to make the button <em>call a function</em> when you click on it.</p>
+
+      <div class="alert">
+        <p>1. Find where the JavaScript is in your file.</p>
+        <p>2. Near the end of the JavaScript, a line ends with <code>on("click", greeting)</code>.</p>
+        <p>3. Where it says <code>greeting</code>, change it to say <code>addStar</code>.</p>
+      </div>
+
+      <p>We just changed what happens when you click on a certain part of the page.</p>
+
+      <p>CHECK: clicking the button now adds a star.</p>
+
+      <h2>Part 3: Remove stars</h2>
+
+      <p>Let's make a new button that removes stars.</p>
+
+      <div class="alert">
+        <p>1. Add a new button to the HTML. Put it next to the other button, but give it a different id.</p>
+        <p>2. In the JavaScript, make your new button call the <code>removeStar</code> function when it is clicked.</p>
+        <p>When we say <code>$('.something')</code>, it tells the computer to <em>look in the HTML for class="something"</em>. The little dot at the start means "this is a class".</p>
+      </div>
+
+      <p>CHECK: You have 2 buttons. One adds stars, one removes stars.</p>
+
+      <h2>Part 4: Click on anything</h2>
+
+      <p>Anything can react to clicks, not only buttons.</p>
+
+       <div class="alert">
+        <p>Make something happen when you click on the page title.</p>
+        <p>It's just like how we made the buttons work.</p>
+      </div>
+
+      <p>Anything can be added and removed, not only stars.</p>
+
+       <div class="alert">
+        <p>Look at the <code>removeStar</code> function. Make a new function that removes something else (maybe the title, or maybe a button.)</p>
+        <p>Make a button that calls your new function.</p>
+      </div>
+
+      <p>Anything can be added, as well.</p>
+
+       <div class="alert">
+        <p>Look at the <code>addStar</code> function. Make a new function that adds some other kind of HTML instead of a star. (Maybe a paragraph like this: <code>&lt;p&gt;These words appear&lt;/p&gt;</code>).</p>
+        <p>Make a button that calls your new function.</p>
+      </div>
+
+      <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
+    </div>
+  </body>
+</html>

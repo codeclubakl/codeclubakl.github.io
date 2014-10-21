@@ -70,16 +70,16 @@
 
       <p>Hint:</p>
 
-      <p>Here's one way to write loops in JavaScript:</p>
+      <p>Here's a "for loop":</p>
 
 <pre><code>for (var i = 0; i &lt; 100; i++) {
   alert("I am so cool, number " + i);
 }
 </code></pre>
 
-      <p>The "for" command is a bit weird, we'll learn more about it later. This loop repeats the code inside the curly brackets 100 times. Ask a mentor if you want to know exactly what each part means.</p>
+      <p>This loop repeats the code inside the curly brackets 100 times. (Ask a mentor if you want to know exactly what each part means).</p>
 
-      <p>Anyway, make it so the page starts off by calling addBox() 100 times. You better remove the line that says <code>alert</code> or you might regret it!</p>
+      <p>Use this loop, but put addBox() inside it so adds 100 boxes. You better remove the line that says <code>alert</code> or you might regret it!</p>
 
       <p>CHECK: your page should start with a big black square, made up of 100 little black squares that turn yellow when clicked.</p>
 
@@ -133,9 +133,13 @@
 }
 </code></pre>
 
-      <p>Inside the loop, you can use <code>i</code> as a counter. It starts from 0, and counts up to 99.</p>
+      <p>Use the loop code again, but this time make it call this code 100 times:</p>
 
-      <p>That means if we say <code>var box = boxes[i];</code> inside the loop, the loop will go through all 100 different boxes.</p>
+<pre><code>var box = boxes[i];
+switchBox(box);
+</code></pre>
+
+      <p>The loop will repeat 100 types, but each time 'i' has a different value.</p>
 
       <div class="alert">
         <p>Change the function <code>switchAllBoxes</code> to use a loop. Inside the loop, use the switchBox function and switch all the boxes.</p>
@@ -149,7 +153,7 @@
 
       <h2>Part 4: Random Button</h2>
 
-      <p>Try adding a NEW button to the page.</p>
+      <p>Add a NEW button to the page.</p>
 
       <p>You'll need to add one line of HTML, to make the button appear on screen.</p>
 
