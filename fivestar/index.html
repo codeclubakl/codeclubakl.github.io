@@ -92,30 +92,53 @@
 
       <p>CHECK: You have 2 buttons. One adds stars, one removes stars.</p>
 
-      <h2>Part 4: Click on anything</h2>
+      <h2>Part 4: Buying stars</h2>
 
-      <p>Anything can react to clicks, not only buttons.</p>
+      <p>Let's make this a game. You need "stardust" to buy new stars.</p>
 
-       <div class="alert">
-        <p>Make something happen when you click on the page title.</p>
-        <p>It's just like how we made the buttons work.</p>
-      </div>
+      <p>At the <em>start</em> of the JavaScript, make a variable to keep track of our stardust.</p>
 
-      <p>Anything can be added and removed, not only stars.</p>
+<pre><code>var starDust = 50;
+</code></pre>
 
-       <div class="alert">
-        <p>Look at the <code>removeStar</code> function. Make a new function that removes something else (maybe the title, or maybe a button.)</p>
-        <p>Make a button that calls your new function.</p>
-      </div>
+		<p>We also need a way to show the player. Let's add some <em>HTML</em> just after the buttons:</p>
 
-      <p>Anything can be added, as well.</p>
+<pre><code>&lt;h2 class="dust-display"&gt;star dust display goes here.&lt;/h2&gt;
+</code></pre>
 
-       <div class="alert">
-        <p>Look at the <code>addStar</code> function. Make a new function that adds some other kind of HTML instead of a star. (Maybe a paragraph like this: <code>&lt;p&gt;These words appear&lt;/p&gt;</code>).</p>
-        <p>Make a button that calls your new function.</p>
-      </div>
+		<p>Next, let's make buying stars cost 10 stardust. You will need to add this code somewhere inside the <code>addStar</code> function.</p>
 
-      <p>That's the end.</p>
+<pre><code>starDust = starDust - 10; //costs 10
+$('.dust-display').text("You have " + starDust + " star dust");//show my new balance
+</code></pre>
+
+	<p>CHECK: When you add a star, your star dust decreases.</p>
+
+	<p>CHECK: What happens when you run out of star dust?</p>
+
+    <h2>Part 4: No overdraft</h2>
+
+    <p>You should not be allowed to stars unless you have enough star dust.</p>
+
+    <p>You will need to change the addStar() function to make this work.</p>
+
+    <p>Here are some clues:</p>
+
+    <p>An age check program:</p>
+
+<pre><code>if (age &gt;= 5) {
+  alert("You are old enough to go to school.");
+  alert("Have fun!");
+} else {
+  alert("No school for you.");
+}
+</code></pre>
+
+      <p><code>&gt;=</code> is a symbol that means "greater than, or equal to." It's useful for price checks.</p>
+
+      <p>CHECK: You cannot buy stars once you run out of star dust.</p>
+
+       <p>That's all we have time for today?</p>
 
       <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
     </div>
