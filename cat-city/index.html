@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <link href="/js/prism/prism.css" rel="stylesheet" />
+    <title>Cat City at Code Club Auckland</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="/" title="Home">Code Club Auckland</a></h1>
+        <h2>Making cool stuff with code!</h2>
+      </div>
+    </header>
+    <div class="container">
+      <h1>Cat City</h1>
+
+      <p><b>IF</b> you rescue five cats <b>THEN</b> you win a free breadmaker!</p>
+
+      <p>(This activity uses JavaScript and jQuery.)</p>
+
+      <h2>What skills do I need?</h2>
+
+      <p><b>IF</b> you have tried HTML and CSS before <b>THEN</b> this is the right activity for you!</p>
+
+      <h2>Part 1: Set up Neocities</h2>
+
+      <p><b>IF</b> you have a Neocities account, Log in to <a href="http://neocities.org">Neocities.org</a>. <b>OTHERWISE,</b> create a new Neocities account and log in. (It's free.)</p>
+
+      <p>Make a new page:</p>
+
+      <img src="create-page.png">
+
+      <p>Call it <b>catcity</b></p>
+
+      <img src="new-page-catcity.png">
+
+      <p>Open a tab to <b>edit</b> the new page.</p>
+
+      <img src="edit.png">
+
+      <p>Open a tab to <b>view</b> the new page.</p>
+
+      <img src="view.png">
+
+      <p>Delete all the default code</p>
+
+      <img src="delete-code.png">
+
+      <p><b>Copy and Paste</b> this code instead:</p>
+
+<pre><code class="language-markup">&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;meta charset='utf-8'>
+    &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">&lt;/script>
+    &lt;title>Cat City&lt;/title>
+    &lt;style>
+    /*This is the start of the CSS*/
+    body {
+      background-color: orange;
+    }
+    button {
+      background-color: lightgreen;
+      padding:20px;
+    }
+    .info {
+      font-size: 20px;
+    }
+    &lt;/style>
+  &lt;/head>
+  &lt;body>
+    &lt;h1>Cat City&lt;/h1>
+    &lt;p class="info">&lt;/p>
+    &lt;p class="message">&lt;/p>
+    &lt;button class="button1">Buy tuna&lt;/button>
+    &lt;button class="button2">Catch a cat&lt;/button>
+    &lt;button class="button3">Give a cat to the SPCA&lt;/button>
+    &lt;script>
+//Hello! This is the start of the JavaScript.
+var cats = 0;
+var catfood = 4;
+var medals = 0;
+var breadmakers = 0;
+
+var showInfo = function () {
+  $(".info").text("You have " + catfood + " tins of catfood, " + cats + " cats and " + medals + " SPCA medals."); 
+}
+
+var getCat = function () {
+  if (catfood > 0) {
+    catfood = catfood - 1;
+    cats = cats + 1;
+    showInfo();
+    $(".message").text("You found a cat!");
+  } else {
+    $(".message").text("You need to buy more catfood first.");
+  }
+}
+
+$(".button2").on("click", getCat);
+    &lt;/script>
+  &lt;/body>
+&lt;/html>
+</code></pre>
+
+      <p><b>CHECK</b> that you copied all the code. <b>Save</b> the page, then <b>view it.</b></p>
+
+      <img src="save_changes.png">
+
+      <h2>What is this?</h2>
+
+      <p>You get an orange page with 3 buttons. One button works, two don't.</p>
+
+      <h2>Part 2: Make it work!</h2>
+
+      <p>Here are the rules:</p>
+
+      <div class="alert">
+        <p>1. You can ALWAYS buy more tuna.</p>
+        <p>2. <b>If</b> you have 1 or more tuna, then you can spend 1 tuna to catch 1 cat. <em>This part is already done for you!</em></p>
+        <p>3. If you have 1 or more cats, then you can give 1 cat to the SPCA to get 1 medal.</p>
+      </div>
+
+      <h2>Part 3: free breadmaker</h2>      
+
+      <p>If you have 5 medals, and you give the SPCA another cat, then the SPCA should give you a free breadmaker INSTEAD OF another medal.</p>
+
+      <p>Can you change your program to do this?</p>
+
+      <p>Here is a CLUE:</p>
+
+<pre><code class="language-javascript">if (teamSize &lt;= 4) {
+  alert("We fit in a car");
+} else if (teamSize &lt;= 8) {
+  alert ("We need a van")
+} else {
+  alert("Hire a bus!")
+}
+</code></pre>
+
+      <p>In this example, there are THREE OPTIONS but only ONE option is picked each time.</p>
+
+      <p>It's a bit like if you said:</p>
+
+      <p><em>Can you get me a snack from the shop? If they have chocolate milk, I'd like a chocolate milk. Otherwise, if they have M&Ms, I'd like 2 packets of M&Ms. Otherwise some Skittles.</em></p>
+
+      <p>One more clue: &amp;&amp; is the symbol for AND.</p>
+
+<pre><code class="language-javascript">//if you have cats AND you have dogs
+if (cats > 1 &amp;&amp; dogs > 1) {
+  alert("Your house must be wild!");
+}
+</code></pre>
+
+      <h2>Extra ideas</h2>
+
+      <p>What new options should you get, now that you have a breadmaker?</p>
+
+      <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
+    </div>
+    <script src="/js/prism/prism.js"></script>
+  </body>
+</html>
