@@ -39,64 +39,145 @@
 
       <p>It helps if you know the difference between HTML, CSS and JavaScript.</p>
 
-      <p>This activity is best if you have already done these ones: <a href="/make-a-page/" target="_blank">Make a Page</a> and <a href="/idea-generator/" target="_blank">Idea Generator</a></p>
+      <p>We recommend doing this after doing our "Make a page" and "Idea generator" activities first.</p>
 
-      <h2>Part 1: Put fivestar.html on Neocities</h2>
 
-      <p>Download this file to your computer. Right click and choose 'Save Link As…' or 'Download linked file as…'</p>
+     <h2>Part 1: Set up Neocities</h2>
 
-      <p>Download this: <a href="example/fivestar.html" target="_blank">fivestar.html</a></p>
+      <p>Log in to <a href="http://neocities.org">Neocities.org</a>. (If you don't have an account, create one. It's free.)</p>
 
-      <div class="alert">
-        <p>1. Download the file linked above.</p>
-        <p>2. Go to <a href="http://neocities.org" target="_blank">neocities.org</a> and log in (or create a new account)</p>
-        <p>3. In Neocities, go to the dashboard.</p>
-        <p>4. <em>Upload</em> the fivestar.html file from your computer to Neocities.</p>
-        <p>5. In Neocities, <em>view</em> fivestar.html and make sure it loads.</p>
-        <p>6. You should see a page with some stars and a button.</p>
-      </div>
+      <p>Make a new page:</p>
 
-      <p>Now you have your own copy of the page.</p>
+      <img src="create-page.png">
 
-      <div class="alert">
-        <p>From the Neocities dashboard, <em>edit</em> fivestar.html.</p>
-        <p>I recommend having one browser tab for editing, and one for viewing the page.</p>
-        <p>Remember, each time you make a change you need to save (on the editing page) and then refresh (on the viewing page)</p>
-      </div>
+      <p>Call it <b>fivestar</b></p>
 
-      <p>Cool, we're ready to make some changes.</p>
+      <img src="new-page-fivestar.png">
+
+      <p>Open a tab to <b>edit</b> the new page.</p>
+
+      <img src="edit.png">      
+
+      <p>Open a tab to <b>view</b> the new page.</p>
+
+      <img src="view.png">
+
+      <p>Delete all the default code</p>
+
+      <img src="delete-code.png">
+
+      <p><b>Copy and Paste</b> this code instead:</p>
+
+<pre><code class="language-markup">&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;meta charset='utf-8'>
+    &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">&lt;/script>
+    &lt;title>Five Star&lt;/title>
+    &lt;style>
+    /*This is the start of the CSS*/
+
+    .star-box {
+      width: 600px;
+      height: 120px;
+      background-color: grey;
+    }
+
+    .star {
+      width: 120px;
+      height: 120px;
+      background-image: url("http://codeclubakl.github.io/linked/goldstar.png");
+      float: left;
+    }
+
+    /*end of CSS */
+    &lt;/style>
+  &lt;/head>
+  &lt;body>
+    &lt;h1 class="title">Five Star Rating&lt;/h1>
+    &lt;div class="star-box">
+      &lt;div class="star">&lt;/div>
+    &lt;/div>
+    &lt;button class="button1">hello&lt;/button>
+    &lt;script>
+//Hello! This is the start of the JavaScript.
+
+var greeting = function () {
+  alert("Hello there!");
+}
+
+var addStar = function () {
+  var star = $('&lt;div class="star">&lt;/div>');
+  $(".star-box").append(star);
+}
+
+var removeStar = function () {
+  $('.star').first().remove();
+}
+
+$(".button1").on("click", greeting);
+
+//This is the end of the JavaScript.
+    &lt;/script>
+  &lt;/body>
+&lt;/html>
+</code></pre>
+
+      <p><b>CHECK</b> that you copied all the code. <b>Save</b> the page, then <b>view it.</b></p>
+
+      <img src="save_changes.png">
+
+      <h2>What is this?</h2>
+
+      <p>You will see a page with one star and one button.</p>
+
+      <p>Clicking the button makes a message pop up.</p>
 
       <h2>Part 2: Make the button add a star</h2>
 
       <p>We use JavaScript to make the button <em>call a function</em> when you click on it.</p>
 
       <div class="alert">
-        <p>1. Find where the JavaScript is in your file.</p>
-        <p>2. Near the end of the JavaScript, a line ends with <code class="language-javascript">on("click", greeting)</code>.</p>
-        <p>3. Where it says <code>greeting</code>, change it to say <code>addStar</code>.</p>
+        <p>1. Find the JavaScript. It starts with <code class="language-markup">&lt;script></code> and ends with <code class="language-markup">&lt;/script></code></p>
+        <p>2. Find this line: <code class="language-javascript">$(".button1").on("click", greeting);</code>.</p>
+        <p>3. Replace the word <b>greeting</b> with <b>addStar</b>.</p>
       </div>
 
-      <p>We just changed what happens when you click on a certain part of the page.</p>
+      <p>We just changed what happens when you click on the button, using <b>JavaScript</b>.</p>
 
       <p>CHECK: clicking the button now adds a star.</p>
 
-      <h2>Part 3: Remove stars</h2>
+      <h2>Part 3: Fix the button's label</h2>
+
+      <p>The button's label says <b>"hello"</b>. It should say something like <b>"Add a star"</b>.</p>
+
+      <div class="alert">
+        <p>1. Find the HTML that adds a button to the page.
+        <p>This is NOT the same line we were before! It's not part of the JavaScript.</p>
+        <p>2. Give the button a better label.</p>
+      </div>
+
+      <p>CHECK: The button has a better label instead of "hello".</p>
+
+      <h2>Part 4: Remove stars</h2>
 
       <p>Let's make a new button that removes stars.</p>
 
       <div class="alert">
-        <p>1. Add a new button to the HTML. Put it next to the other button, and give it a different class.</p>
+        <p>1. Add a new button to the HTML. Put it next to the other button, and give it a different <b>class</b>.</p>
         <p>2. In the JavaScript, make your new button call the <code>removeStar</code> function when it is clicked.</p>
         <p>When we say <code class="language-javascript">$('.something')</code>, it tells the computer to <em>look in the HTML for class="something"</em>. The little dot at the start means "this is a class".</p>
       </div>
 
       <p>CHECK: You have 2 buttons. One adds stars, one removes stars.</p>
 
-      <h2>Part 4: Buying stars</h2>
+      <h2>Part 5: Buying stars</h2>
 
       <p>Let's make this a game. You need "stardust" to buy new stars.</p>
 
       <p>At the <em>start</em> of the JavaScript, make a variable to keep track of our stardust.</p>
+
+      <p>(Do you remember where the JavaScript starts?)</p>
 
 <pre><code class="language-javascript">var starDust = 50;
 </code></pre>
@@ -126,23 +207,23 @@ $('.dust-display').text("You have " + starDust + " star dust");//show my new bal
 
     <p>An age check program:</p>
 
-<pre><code class="language-javascript">if (age &gt;= 5) {
-  alert("You are old enough to go to school.");
-  alert("Have fun!");
+<pre><code class="language-javascript">var age = 14;
+if (age &gt;= 5) {
+  alert("You are old enough to go to school. Have fun!");
 } else {
   alert("No school for you.");
 }
 </code></pre>
 
-      <p><code>&gt;=</code> is a symbol that means "greater than, or equal to." It's useful for price checks.</p>
+      <p><b>&gt;=</b> means "greater than, or equal to." It's useful for price checks.</p>
 
-      <p>CHECK: You cannot buy stars once you run out of star dust.</p>
+      <p>CHECK: If you have 10 or more stardust, you can buy a star.</p>
 
-    <h2>Part 5: Star collector</h2>
+      <p>CHECK: Otherwise, you can NOT buy a star. No new star appears.</p>
 
-      <p>OK I didn't finish this part.</p>
+      <h2>Extra if we have time</h2>
 
-       <p>That's all we have time for today?</p>
+       <p>What if clicking on a star gave you some stardust?</p>
 
        <p>Maybe you could do it. Try changing the <em>addStar</em> function, by adding this to the end of it:</p>
 
@@ -151,7 +232,7 @@ $('.dust-display').text("You have " + starDust + " star dust");//show my new bal
 
       <p>Check that, and see what clicking on stars does.</p>
 
-      <p>...</p>
+      <p>...now instead of making it run the "greeting" function, you can make it run a different function... maybe even make your own.</p>
 
       <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
     </div>
