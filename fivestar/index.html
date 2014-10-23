@@ -4,8 +4,8 @@
     <meta charset='utf-8'>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <link href="/js/prism/prism.css" rel="stylesheet" />
     <title>Five Star at Code Club Auckland</title>
     <style>
    		.star {
@@ -72,7 +72,7 @@
 
       <div class="alert">
         <p>1. Find where the JavaScript is in your file.</p>
-        <p>2. Near the end of the JavaScript, a line ends with <code>on("click", greeting)</code>.</p>
+        <p>2. Near the end of the JavaScript, a line ends with <code class="language-javascript">on("click", greeting)</code>.</p>
         <p>3. Where it says <code>greeting</code>, change it to say <code>addStar</code>.</p>
       </div>
 
@@ -87,7 +87,7 @@
       <div class="alert">
         <p>1. Add a new button to the HTML. Put it next to the other button, and give it a different class.</p>
         <p>2. In the JavaScript, make your new button call the <code>removeStar</code> function when it is clicked.</p>
-        <p>When we say <code>$('.something')</code>, it tells the computer to <em>look in the HTML for class="something"</em>. The little dot at the start means "this is a class".</p>
+        <p>When we say <code class="language-javascript">$('.something')</code>, it tells the computer to <em>look in the HTML for class="something"</em>. The little dot at the start means "this is a class".</p>
       </div>
 
       <p>CHECK: You have 2 buttons. One adds stars, one removes stars.</p>
@@ -98,17 +98,17 @@
 
       <p>At the <em>start</em> of the JavaScript, make a variable to keep track of our stardust.</p>
 
-<pre><code>var starDust = 50;
+<pre><code class="language-javascript">var starDust = 50;
 </code></pre>
 
 		<p>We also need a way to show the player. Let's add some <em>HTML</em> just after the buttons:</p>
 
-<pre><code>&lt;h2 class="dust-display"&gt;star dust display goes here.&lt;/h2&gt;
+<pre><code class="language-markup">&lt;h2 class="dust-display"&gt;star dust display goes here.&lt;/h2&gt;
 </code></pre>
 
 		<p>Next, let's make buying stars cost 10 stardust. You will need to add this code somewhere inside the <code>addStar</code> function.</p>
 
-<pre><code>starDust = starDust - 10; //costs 10
+<pre><code class="language-javascript">starDust = starDust - 10; //costs 10
 $('.dust-display').text("You have " + starDust + " star dust");//show my new balance
 </code></pre>
 
@@ -126,7 +126,7 @@ $('.dust-display').text("You have " + starDust + " star dust");//show my new bal
 
     <p>An age check program:</p>
 
-<pre><code>if (age &gt;= 5) {
+<pre><code class="language-javascript">if (age &gt;= 5) {
   alert("You are old enough to go to school.");
   alert("Have fun!");
 } else {
@@ -146,7 +146,7 @@ $('.dust-display').text("You have " + starDust + " star dust");//show my new bal
 
        <p>Maybe you could do it. Try changing the <em>addStar</em> function, by adding this to the end of it:</p>
 
-<pre><code>star.on("click", greeting);
+<pre><code class="language-javascript">star.on("click", greeting);
 </code></pre>
 
       <p>Check that, and see what clicking on stars does.</p>
@@ -155,5 +155,6 @@ $('.dust-display').text("You have " + starDust + " star dust");//show my new bal
 
       <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
     </div>
+    <script src="/js/prism/prism.js"></script>
   </body>
 </html>

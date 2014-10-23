@@ -4,8 +4,8 @@
     <meta charset='utf-8'>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <link href="/js/prism/prism.css" rel="stylesheet" />
     <title>Websites  - Code Club Auckland</title>
   </head>
   <body>
@@ -71,17 +71,20 @@
 
       <p>This opens a tab that says 'Editing index.html' at the top. This is where you can change your page.</p>
 
+      <img src="editing.png">
+
       <p>Now you have two tabs that you will use: One to look at your site, and one to edit your site.</p>
 
-      <h2>Edit your HTML page</h2>
+      <h2>Replace the HTML</h2>
 
-      <ul>
-        <li>Go to the tab for index.html</li>
-        <li>Delete everything in the blue area until it's empty. That's right, delete all the code until it's an empty grey box!</li>
-        <li>Then paste this in instead:</li>
-      </ul>
+      <p>Go to the tab for index.html</p>
+      <p>Delete everything in the blue area until it's empty. That's right, delete all the code until it's an empty grey box!</p>
 
-<pre><code>
+      <img src="delete_everything.png">
+      
+      <p>Then paste this in instead:</p>
+
+<pre><code class="language-markup">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -105,7 +108,7 @@
 
       <img src="save_changes.png">
 
-      <p>Now switch to the tab that shows your website. Refresh the pages and you should see your changes appear.</p>
+      <p>Now switch to the tab that shows your website. <b>Refresh</b> the page and you should see your changes appear.</p>
 
       <p>It should look like this.</p>
 
@@ -118,5 +121,6 @@
       <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
 
     </div>
+    <script src="/js/prism/prism.js"></script>
   </body>
 </html>
