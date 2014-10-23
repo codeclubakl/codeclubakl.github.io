@@ -39,8 +39,7 @@
 
       <p>Your CSS code might look like this now:</p>
 
-<pre><code class="language-css">
-body {
+<pre><code class="language-css">body {
   color: purple;
   background-color: orange;
 }
@@ -50,10 +49,9 @@ body {
 
       <p>Let's add a new CSS rule to make the page heading look different.</p>
 
-      <p>Add these lines to your CSS, just above line that says <code>&lt;/style&gt;</code>.</p>
+      <p><b>Add these lines</b> to your CSS, just above line that says <code>&lt;/style&gt;</code>.</p>
 
-<pre><code class="language-css">
-h1 {
+<pre><code class="language-css">h1 {
   text-align: center;
   font-size: 90px;
   color: white;
@@ -76,13 +74,12 @@ h1 {
 
     Let's add one more CSS rule, which changes the style of the other text.
 
-<pre><code class="language-css">
-  p {
-    border: 2px solid white;
-    padding: 12px;
-    background-color: maroon;
-    color: pink;
-  }
+<pre><code class="language-css">p {
+  border: 2px solid white;
+  padding: 12px;
+  background-color: maroon;
+  color: pink;
+}
 </code></pre>    
 
     <p>Try that out. We'll explain how it works later! First let's make the page say something more interesting.</p>
@@ -97,11 +94,10 @@ h1 {
 
     <p>Your page body probably looks like this:</p>
 
-<pre><code class="language-markup">
-  &lt;body&gt;
-      &lt;h1&gt;Welcome to my page&lt;/h1&gt;
-      &lt;p&gt;This is a paragraph.&lt;/p&gt;
-  &lt;/body&gt;
+<pre><code class="language-markup">&lt;body&gt;
+    &lt;h1&gt;Welcome to my page&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/body&gt;
 </code></pre>
   
     <p>h1 is short for 'heading 1'. It represents the biggest (most important) heading on your page.</p>
@@ -118,8 +114,7 @@ h1 {
 
     <p>Try adding this somewhere inside your page body:</p>
 
-<pre><code class="language-markup">
-  &lt;img src="http://mgatland.neocities.org/countryside.jpg"&gt;
+<pre><code class="language-markup">&lt;img src="http://mgatland.neocities.org/countryside.jpg"&gt;
 </code></pre>
 
     <p>An img tag shows an image. You can change the URL to show a different image instead.</p>
@@ -140,8 +135,7 @@ h1 {
 
     <p>Here's an example of a complete CSS rule:</p>
 
-<pre><code class="language-css">
-img {
+<pre><code class="language-css">img {
   border: 10px dashed green;
   margin: 30px;
 }
@@ -153,8 +147,7 @@ img {
 
     <p>Then we have the instructions, like this:</p>
 
-<pre><code class="language-css">
-  border: 10px dashed green;
+<pre><code class="language-css">border: 10px dashed green;
 </code></pre>
 
     <p>There are many different options. But they always have a colon in the middle and a semi-colon at the end.</p>
@@ -178,8 +171,7 @@ img {
 
   <h2>make an image centered</h2>
 
-<pre><code class="language-css">
-img {
+<pre><code class="language-css">img {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -190,8 +182,7 @@ img {
 
   <p>Imagine that html tags create a box. The box can have a border.</p>
 
-<pre><code class="language-css">
-div {
+<pre><code class="language-css">p {
   border: 2px solid black;
 }
 </code></pre>
@@ -200,8 +191,7 @@ div {
 
   <p>We can add padding, which means space inside the box.</p>
 
-<pre><code class="language-css">
-div {
+<pre><code class="language-css">p {
   border: 2px solid black;
   padding: 10px;
 }
@@ -212,6 +202,16 @@ div {
   <h2>Putting boxes inside boxes</h2>
 
   <br>
+
+<pre><code class="language-markup">&lt;div>
+  &lt;p>
+    hello
+  &lt;/p>
+  &lt;p>
+    hello
+  &lt;/p>
+&lt;/div>
+</code></pre>
 
   <div style="border: 2px solid black; padding: 10px;">
     <div style="border: 2px solid red; padding: 10px;">
@@ -226,16 +226,14 @@ div {
 
   <p>... or <b>bold</b> text inside paragraphs.</p>
 
-<pre><code class="language-markup">
-&lt;p&gt;... or &lt;b&gt;bold&lt;/b&gt; text inside paragraphs.&lt;/p&gt;
+<pre><code class="language-markup">&lt;p&gt;... or &lt;b&gt;bold&lt;/b&gt; text inside paragraphs.&lt;/p&gt;
 </code></pre>
 
       <h2>Links</h2>
 
-      <p><a href="http://www.google.com">Here is a link.</a></p>
+      <p><a href="http://www.google.com" target="_blank">Here is a link.</a></p>
 
-<pre><code class="language-markup">
-&lt;a href=&quot;http://www.google.com&quot;&gt;Here is a link.&lt;/a&gt;
+<pre><code class="language-markup">&lt;a href=&quot;http://www.google.com&quot;&gt;Here is a link.&lt;/a&gt;
 </code></pre>
 
       <p>Pay close attention to where the pointy brackets go! The href part is <b>inside</b> the first tag.</p>
@@ -246,15 +244,13 @@ div {
 
       <p>You can give any HTML tag a 'class', which is like an extra label. You make up the label. Here I called it 'loud'</p>
 
-<pre><code class="language-markup">
-&lt;p&gt;This is a paragraph.&lt;/p&gt;
+<pre><code class="language-markup">&lt;p&gt;This is a paragraph.&lt;/p&gt;
 &lt;p class=&quot;loud&quot;&gt;Here is another.&lt;/p&gt;
 </code></pre>
 
       <p>Now we can write a CSS rule that applies to anything that has that class.</p>
 
-<pre><code class="language-css">
-.loud {
+<pre><code class="language-css">.loud {
   color: red;
 }
 </code></pre>
