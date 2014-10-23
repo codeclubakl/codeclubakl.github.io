@@ -4,12 +4,9 @@
     <meta charset='utf-8'>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <link href="/js/prism/prism.css" rel="stylesheet" />
     <title>Idea Generator at Code Club Auckland</title>
-    <style>
-   
-    </style>
   </head>
   <body>
     <header>
@@ -31,40 +28,115 @@
 
       <p>This activity is for people who've already done some basic HTML and CSS.</p>
 
-      <p>If you've never written HTML, please do this activity instead: <a href="/make-a-page/">Make a Page</a></p>
+      <p>If you've never written HTML, please do our "make a page" activity instead.</p>
 
-      <h2>Part 1: Starting from something</h2>
+      <h2>Part 1: Set up Neocities</h2>
 
-      <p>Sometimes we start from nothing, and write all our own code.</p>
+      <p>Log in to <a href="http://neocities.org">Neocities.org</a>. (If you don't have an account, create one. It's free.)</p>
 
-      <p>But most of the time, we save time by using other people's code as a starting point.</p>
+      <p>Make a new page:</p>
 
-      <p>You will need to download this file to your computer. Right click and choose 'Save Link As…' or 'Download linked file as…'</p>
+      <img src="create-page.png">
 
-      <ul>
-        <li><a href="example/tvshow.html" target="_blank">tvshow.html</a></li>
-      </ul>
+      <p>Call it <b>tvshow</b></p>
 
-      <div class="alert">
-        <p>1. Download the file linked above.</p>
-        <p>2. Go to <a href="http://neocities.org" target="_blank">neocities.org</a> and log in (or create a new account)</p>
-        <p>3. In Neocities, go to the dashboard.</p>
-        <p>4. <em>Upload</em> the tvshow.html file from your computer to Neocities.</p>
-        <p>5. In Neocities, <em>view</em> tvshow.html and make sure it works.</p>
-        <p>6. You should see a blue page with a 'Next idea' button. Try clicking it.</p>
-        <p>7. Try clicking the button lots of times. What is it doing?</p>
-      </div>
+      <img src="new-page-tvshow.png">
+
+      <p>Open a tab to <b>edit</b> the new page.</p>
+
+      <img src="edit.png">      
+
+      <p>Open a tab to <b>view</b> the new page.</p>
+
+      <img src="view.png">
+
+      <p>Delete all the default code</p>
+
+      <img src="delete-code.png">
+
+      <p><b>Copy and Paste</b> this code instead:</p>
+
+<pre><code class="language-markup">&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;meta charset='utf-8'>
+    &lt;title>TV Concept Generator&lt;/title>
+    &lt;style>
+    
+    body {
+        background-color: #aaaaff;
+    }
+
+    h2 {
+        color: blue;
+    }
+    &lt;/style>
+  &lt;/head>
+  &lt;body>
+    &lt;h1>TV concept generator&lt;/h1>
+    &lt;h2 id="display-area">Click the button!&lt;/h2>
+    &lt;button id="next-page-button">Next idea&lt;/button>
+    &lt;script>
+      //Hello! This is the JavaScript.
+      //You can skip this part for now. Jump ahead down to where I say 'LOOK HERE'
+
+      var button = document.getElementById("next-page-button");
+
+      var showThisMessage = function (message) {
+        var displayArea = document.getElementById("display-area");
+        displayArea.innerHTML = message;
+      };
+
+      var makeAndShowConcept = function () {
+        var randomConcept = getRandomConcept();
+        showThisMessage(randomConcept);
+      };
+
+      var pickRandom = function (list) {
+        return list[Math.floor(Math.random()*list.length)];
+      };
+
+      button.addEventListener('click', makeAndShowConcept);
+
+      // ***
+      // LOOK HERE
+      // ***
+      // Hello again! This is the part we are working on.
+
+      var getRandomConcept = function () {
+        var people = [];
+        people.push("time traveller");
+        people.push("school teacher");
+
+        var jobs = [];
+        jobs.push("runs a hotel");
+        jobs.push("solves mysteries");
+
+        var space = " ";
+
+        var myConcept = "A " + pickRandom(people) + " who " + pickRandom(jobs);
+        return myConcept;
+      };
+    &lt;/script>
+  &lt;/body>
+&lt;/html>
+</code></pre>
+
+      <p><b>CHECK</b> that you copied all the code. <b>Save</b> the page, then <b>view it.</b></p>
+
+      <h2>What is this?</h2>
+
+      <p>View the page. You'll see a blue page with a button.</p>
+
+      <p>Click on 'Next idea'. What happens? Try it lots of times.</p>
 
       <p>Now you have your own copy of the TV show idea generator, and you can make changes to it.</p>
 
       <div class="alert">
-        <p>From the Neocities dashboard, you can <em>edit</em> tvshow.html.</p>
-        <p>Find line number 44.</p>
+        <p>In the code, find line number 44.</p>
         <p>For now, we are <b>only</b> looking from line 44 to the end.</p>
         <p>Can you see any connection between this code and what happens when you click 'Next idea'?</p>
       </div>
-
-      <p>Cool, now we're ready to make some changes.</p>
 
       <h2>Part 2: pushing the limits</h2>
 
@@ -81,7 +153,7 @@
 
       <p>Remember, you only need to make changes from line 44 to the end.</p>
 
-      <h2>Part 3: Teamwork</h2>
+      <h2>Part 3: Two Characters</h2>
 
       <p>I like shows that have two main characters.</p>
 
@@ -128,5 +200,6 @@
 
       <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
     </div>
+    <script src="/js/prism/prism.js"></script>
   </body>
 </html>

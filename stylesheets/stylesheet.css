@@ -70,6 +70,7 @@ img {
   margin-top: 10px;
   margin-bottom: 20px;
   border: 2px solid #2092C0;
+  display: block;
 }
 
 a {
