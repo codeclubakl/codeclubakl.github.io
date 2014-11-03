@@ -115,6 +115,11 @@ var removeStar = function () {
   $('.star').first().remove();
 }
 
+var fadeStars = function () {
+  $('.star').fadeToggle();
+}
+
+//make the buttons call functions when clicked
 $(".button1").on("click", greeting);
 
 //This is the end of the JavaScript.
@@ -139,7 +144,7 @@ $(".button1").on("click", greeting);
 
       <div class="alert">
         <p>1. Find the JavaScript. It starts with <code class="language-markup">&lt;script></code> and ends with <code class="language-markup">&lt;/script></code></p>
-        <p>2. Find this line: <code class="language-javascript">$(".button1").on("click", greeting);</code>.</p>
+        <p>2. Find this line: <code class="language-javascript">$(".button1").on("click", greeting);</code>. (It's near the end.)</p>
         <p>3. Replace the word <b>greeting</b> with <b>addStar</b>.</p>
       </div>
 
@@ -164,75 +169,22 @@ $(".button1").on("click", greeting);
       <p>Let's make a new button that removes stars.</p>
 
       <div class="alert">
-        <p>1. Add a new button to the HTML. Put it next to the other button, and give it a different <b>class</b>.</p>
-        <p>2. In the JavaScript, make your new button call the <code>removeStar</code> function when it is clicked.</p>
-        <p>When we say <code class="language-javascript">$('.something')</code>, it tells the computer to <em>look in the HTML for class="something"</em>. The little dot at the start means "this is a class".</p>
+        <p>1. Add a new button to the HTML. Do this by copying the HTML code for the old button. (Remember, HTML means pointy brackets like these <b>&lt;button</b>...<b>></b>)</p>
+        <p>2. Give your new button a different <b>class</b>. This means the JavaScript can know which is which.</p>
+        <p>3. CHECK that there are now two different buttons when you view the page.</p>
+        <p>4. In the JavaScript, make your new button work. Make it call the <code>removeStar</code> function when it is clicked.</p>
+        <p>CLUE: Remember the line right at the end? It starts with <code class="language-javascript">$('.button1')</code>. You will need to copy that line and then change a few things to make your new button work.</p>
       </div>
 
       <p>CHECK: You have 2 buttons. One adds stars, one removes stars.</p>
 
-      <h2>Part 5: Buying stars</h2>
+      <h2>Part 5: More functions</h2>
 
-      <p>Let's make this a game. You need "stardust" to buy new stars.</p>
+      <p>There is one more function in the code. Can you see it? Can you make a new button that calls that function?</p>
 
-      <p>At the <em>start</em> of the JavaScript, make a variable to keep track of our stardust.</p>
+      <h2>Part 6: Styles</h2>
 
-      <p>(Do you remember where the JavaScript starts?)</p>
-
-<pre><code class="language-javascript">var starDust = 50;
-</code></pre>
-
-		<p>We also need a way to show the player. Let's add some <em>HTML</em> just after the buttons:</p>
-
-<pre><code class="language-markup">&lt;h2 class="dust-display"&gt;star dust display goes here.&lt;/h2&gt;
-</code></pre>
-
-		<p>Next, let's make buying stars cost 10 stardust. You will need to add this code somewhere inside the <code>addStar</code> function.</p>
-
-<pre><code class="language-javascript">starDust = starDust - 10; //costs 10
-$('.dust-display').text("You have " + starDust + " star dust");//show my new balance
-</code></pre>
-
-	<p>CHECK: When you add a star, your star dust decreases.</p>
-
-	<p>CHECK: What happens when you run out of star dust?</p>
-
-    <h2>Part 4: No overdraft</h2>
-
-    <p>You should not be allowed to buy stars unless you have enough star dust.</p>
-
-    <p>You will need to change the addStar() function to make this work.</p>
-
-    <p>Here are some clues:</p>
-
-    <p>An age check program:</p>
-
-<pre><code class="language-javascript">var age = 14;
-if (age &gt;= 5) {
-  alert("You are old enough to go to school. Have fun!");
-} else {
-  alert("No school for you.");
-}
-</code></pre>
-
-      <p><b>&gt;=</b> means "greater than, or equal to." It's useful for price checks.</p>
-
-      <p>CHECK: If you have 10 or more stardust, you can buy a star.</p>
-
-      <p>CHECK: Otherwise, you can NOT buy a star. No new star appears.</p>
-
-      <h2>Extra if we have time</h2>
-
-       <p>What if clicking on a star gave you some stardust?</p>
-
-       <p>Maybe you could do it. Try changing the <em>addStar</em> function, by adding this to the end of it:</p>
-
-<pre><code class="language-javascript">star.on("click", greeting);
-</code></pre>
-
-      <p>Check that, and see what clicking on stars does.</p>
-
-      <p>...now instead of making it run the "greeting" function, you can make it run a different function... maybe even make your own.</p>
+      <p>You could probably change the CSS (between &lt;style> and &lt;/style>) to make the page look a lot better. You can make the buttons look different!</p>
 
       <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
     </div>
