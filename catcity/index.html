@@ -115,9 +115,33 @@ $(".button2").on("click", getCat);
 
       <p>You get an orange page with 3 buttons. One button works, two don't.</p>
 
-      <h2>Part 2: Make it work!</h2>
+      <h2>Part 2: Make the other buttons work!</h2>
 
-      <p>Here are the rules:</p>
+      <p>We use JavaScript to make the button <em>call a function</em> when you click on it.</p>
+
+      <p>One button already works. You'll need to look at the code, see what makes it work, and make the other buttons work as well.</p>
+
+      <div class="alert">
+        <p>1. Find the JavaScript. It starts with <code class="language-markup">&lt;script></code> and ends with <code class="language-markup">&lt;/script></code></p>
+        <p>2. Find this line: <code class="language-javascript">$(".button2").on("click", getCat);</code>. It is right at the end.</p>
+        <p>3. <b>"button2"</b> and <b>getCat</b> are words that appear somewhere else in the code. Can you find them, and work out what this line does?</p>
+      </div>
+
+      <h2>Oops, my page stopped working?</h2>
+
+      <p><b>One mistake</b> in your JavaScript can make <b>everything</b> stop working!</p>
+
+      <p>The good news is, <b>we can see exactly where the mistake is</b>.</p>
+
+      <p>When viewing your page, open the <b>Javascript Console</b>. If you're using Google Chrome, press CTRL+SHIFT+I (on Windows) or CMD+OPTION+I (on Mac) then find <b>Console</b> in the options that pop up.</p>
+
+      <p>(If you are not using Google Chrome, you still have a JavaScript console. Look in the options for 'Developer Tools'</p>
+
+      <p>Once the console is open, refresh the page. Any errors will be listed and the console will tell you exactly which line they happen on.</p>
+
+      <h2>Part 3: Cat City Rules</h2>
+
+      <p>Here are the rules in Cat City:</p>
 
       <div class="alert">
         <p>1. You can ALWAYS buy more tuna.</p>
@@ -125,7 +149,7 @@ $(".button2").on("click", getCat);
         <p>3. If you have 1 or more cats, then you can give 1 cat to the SPCA to get 1 medal.</p>
       </div>
 
-      <h2>Part 3: free breadmaker</h2>      
+      <h2>Part 4: free breadmaker</h2>      
 
       <p>If you have 5 medals, and you give the SPCA another cat, then the SPCA should give you a free breadmaker INSTEAD OF another medal.</p>
 
