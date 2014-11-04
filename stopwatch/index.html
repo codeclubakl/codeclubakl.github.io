@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <link href="/js/prism/prism.css" rel="stylesheet" />
+    <title>Stopwatch at Code Club Auckland</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="/" title="Home">Code Club Auckland</a></h1>
+        <h2>Making cool stuff with code!</h2>
+      </div>
+    </header>
+    <div class="container">
+      <h1>Stopwatch</h1>
+
+      <p>I asked a programmer to make me a stopwatch to help me practice my speech. But they messed it up!</p>
+
+      <p>(This activity uses JavaScript and jQuery.)</p>
+
+      <h2>What skills do I need?</h2>
+
+      <p>This is best if you've tried HTML, CSS and maybe even a little bit of JavaScript before.</p>
+
+      <p>By now you should also know how to create a new page in Neocities, view it and open it for editing.</p>
+
+      <h2>Part 1: Set up Neocities</h2>
+
+      <p>Log in to your <a href="http://neocities.org">Neocities.org</a> account. If you don't have one, create one - it's free.</p>
+
+      <p>Make a new page, and call it <b>stopwatch</b></p>
+
+      <p>Open a tab to <b>edit</b> the new page.</p>
+
+      <p>Open a tab to <b>view</b> the new page.</p>
+
+      <p>Delete all the default code</p>
+
+      <p><b>Copy and Paste</b> this code instead:</p>
+
+<pre><code class="language-markup">&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;meta charset='utf-8'>
+    &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">&lt;/script>
+    &lt;title>Stopwatch&lt;/title>
+    &lt;style>
+    /*This is the start of the CSS*/
+    body {
+      background-color: chocolate;
+      font-size: 20px;
+    }
+    button {
+      border: 2px solid black;
+      background-color: lightgrey;
+      width: 100px;
+      height: 50px;
+      font-size: 20px;
+    }
+    &lt;/style>
+  &lt;/head>
+  &lt;body>
+    &lt;h1>Stopwatch&lt;/h1>
+    &lt;p class="time">0&lt;/p>
+    &lt;button class="button1">Start&lt;/button>
+    &lt;button class="button2">Stop&lt;/button>
+    &lt;button class="button3">Reset&lt;/button>
+    &lt;script>
+//Hello! This is the start of the JavaScript.
+var timer = 0;
+
+//this variable decides if I am counting right now
+var counting = true;
+
+var tick = function () {
+
+  if (counting === true) {
+    timer = timer + 1;  
+  }
+  
+  $(".time").text(timer);
+}
+
+//You probably don't want this
+var silly = function () {
+  timer = timer + 100;
+}
+
+//You probably don't want this either
+var makeTrouble = function () {
+  alert("Causing");
+  alert("Trouble");
+}
+
+//what's this?
+var ruinEverything = function () {
+  $(".button3").fadeOut();
+}
+
+//call the function 'tick' every 1000 milliseconds
+setInterval(tick, 1000);
+
+//make the buttons work lol not really
+$(".button1").on("click", silly);
+$(".button2").on("click", makeTrouble);
+$(".button3").on("click", ruinEverything);
+
+//This is the end of the javascript
+    &lt;/script>
+  &lt;/body>
+&lt;/html>
+</code></pre>
+
+      <p><b>CHECK</b> that you copied all the code. <b>Save</b> the page, then <b>view it.</b></p>
+
+      <img src="save_changes.png">
+
+      <h2>What is this?</h2>
+
+      <p>I asked a programmer to make an online stopwatch for me.</p>
+
+      <p>But they messed it up! :/</p>
+
+      <p>This is what it's supposed to do:</p>
+
+      <p><b>Start</b>: start counting</p>
+
+      <p><b>Stop</b>: stop counting</p>
+
+      <p><b>Reset</b>: change the timer to zero.</p>
+
+      <p><b>One more thing:</b> it should not start counting until I click start!</p>
+
+      <h2>Part 1: fixing the timer</h2>
+
+      <p>Can you fix the stopwatch?</p>
+
+      <p>You only need to change the JavaScript. Everything else is OK (but you can still make it better if you like).</p>
+
+      <p>There's one function we haven't seen before: <b>setInterval</b>. This function tells the browser to call another function over and over again forever.</p>
+
+      <div class="alert">
+        <p>Work out what's wrong with the stopwatch</p>
+        <p>Make it work properly!</p>
+      </div>
+
+      <h2>Oops, my page suddenly stopped working?</h2>
+
+      <p><b>One mistake</b> in your JavaScript can make <b>everything</b> stop working!</p>
+
+      <p>The good news is, <b>we can see exactly where the mistake is</b>.</p>
+
+      <p>When viewing your page, open the <b>Javascript Console</b>. If you're using Google Chrome, press CTRL+SHIFT+I (on Windows) or CMD+OPTION+I (on Mac) then find <b>Console</b> in the options that pop up.</p>
+
+      <p>(If you are not using Google Chrome, you still have a JavaScript console. Look in the options for 'Developer Tools'</p>
+
+      <p>Once the console is open, refresh the page. Any errors will be listed and the console will tell you exactly which line they happen on.</p>
+
+      <h2>Extra: links</h2>
+
+      <p>In Neocities, you probably have lots of pages by now. Your <b>index.html</b> page is your <b>home page</b>. People who visit your site will automatically be sent there.</p>
+
+      <p>If you add links from your index.html page to all your other pages, people will be able to find them more easily.</p>
+
+      <p>Can you add links from your index.html page to all the other pages you've created?</p>
+
+<pre><code class="language-markup">
+&lt;a href="/stopwatch.html">my stopwatch&lt;/a>
+
+&lt;a href="/catcity.html">my cat city game&lt;/a>
+
+&lt;a href="/fivestar.html">my five star project&lt;/a>
+</code></pre>
+
+      <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
+    </div>
+    <script src="/js/prism/prism.js"></script>
+  </body>
+</html>
