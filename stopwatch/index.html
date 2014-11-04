@@ -18,7 +18,7 @@
     <div class="container">
       <h1>Stopwatch</h1>
 
-      <p>I asked a programmer to make me a stopwatch to help me practice my speech. But they messed it up!</p>
+      <p>I asked a programmer to make a stopwatch to help me practice my speech. But they made it all wrong!</p>
 
       <p>(This activity uses JavaScript and jQuery.)</p>
 
@@ -30,15 +30,25 @@
 
       <h2>Part 1: Set up Neocities</h2>
 
-      <p>Log in to your <a href="http://neocities.org">Neocities.org</a> account. If you don't have one, create one - it's free.</p>
+     <p>Make a new page:</p>
 
-      <p>Make a new page, and call it <b>stopwatch</b></p>
+      <img src="create-page.png">
+
+      <p>Call it <b>stopwatch</b></p>
+
+      <img src="new-page-name.png">
 
       <p>Open a tab to <b>edit</b> the new page.</p>
 
+      <img src="edit.png">
+
       <p>Open a tab to <b>view</b> the new page.</p>
 
-      <p>Delete all the default code</p>
+      <img src="view.png">
+
+      <p>In the editing tab, delete all the code.</p>
+
+      <img src="delete-code.png">
 
       <p><b>Copy and Paste</b> this code instead:</p>
 
@@ -71,43 +81,47 @@
     &lt;button class="button3">Reset&lt;/button>
     &lt;script>
 //Hello! This is the start of the JavaScript.
-var timer = 0;
 
+//this variable holds the number to display
+var timer;
 //this variable decides if I am counting right now
-var counting = true;
+var counting;
 
+//set up
+timer = 9999;
+counting = true;
+
+//tick tick tick tick...
 var tick = function () {
-
   if (counting === true) {
-    timer = timer + 1;  
+    timer = timer - 1;
   }
-  
+  //display the timer value  
   $(".time").text(timer);
 }
 
-//You probably don't want this
-var silly = function () {
-  timer = timer + 100;
+var start = function () {
+  //not working right...
+  alert("Start!");
 }
 
-//You probably don't want this either
-var makeTrouble = function () {
-  alert("Causing");
-  alert("Trouble");
+var stop = function () {
+  //um...
+  timer = 0;
 }
 
-//what's this?
-var ruinEverything = function () {
+var reset = function () {
+  //not sure this is right
   $(".button3").fadeOut();
 }
 
-//call the function 'tick' every 1000 milliseconds
-setInterval(tick, 1000);
+//call the function 'tick' over and over again
+setInterval(tick, 50);
 
-//make the buttons work lol not really
-$(".button1").on("click", silly);
-$(".button2").on("click", makeTrouble);
-$(".button3").on("click", ruinEverything);
+//When you click on a button it will call a function:
+$(".button1").on("click", start);
+$(".button2").on("click", stop);
+$(".button3").on("click", reset);
 
 //This is the end of the javascript
     &lt;/script>
@@ -119,46 +133,83 @@ $(".button3").on("click", ruinEverything);
 
       <img src="save_changes.png">
 
+      <p>If it looks like this, you're ready to start!</p>
+
+      <img src="example.png">
+
       <h2>What is this?</h2>
 
       <p>I asked a programmer to make an online stopwatch for me.</p>
 
       <p>But they messed it up! :/</p>
 
-      <p>This is what it's supposed to do:</p>
+      <p>Can you fix it?</p>
 
-      <p><b>Start</b>: start counting</p>
+      <h2>Just JavaScript</h2>
 
-      <p><b>Stop</b>: stop counting</p>
+      <p>You only need to change the JavaScript for this activity. The HTML and CSS works (but you can still improve it if you like).</p>
 
-      <p><b>Reset</b>: change the timer to zero.</p>
+      <p>The JavaScript starts with a &lt;script> tag.</p>
 
-      <p><b>One more thing:</b> it should not start counting until I click start!</p>
-
-      <h2>Part 1: fixing the timer</h2>
-
-      <p>Can you fix the stopwatch?</p>
-
-      <p>You only need to change the JavaScript. Everything else is OK (but you can still make it better if you like).</p>
-
-      <p>There's one function we haven't seen before: <b>setInterval</b>. This function tells the browser to call another function over and over again forever.</p>
-
-      <div class="alert">
-        <p>Work out what's wrong with the stopwatch</p>
-        <p>Make it work properly!</p>
-      </div>
-
-      <h2>Oops, my page suddenly stopped working?</h2>
+      <h2>Part 2: Developer Tools</h2>
 
       <p><b>One mistake</b> in your JavaScript can make <b>everything</b> stop working!</p>
 
-      <p>The good news is, <b>we can see exactly where the mistake is</b>.</p>
+      <p>The good news is, <b>developer tools help us find the mistake</b>.</p>
 
       <p>When viewing your page, open the <b>Javascript Console</b>. If you're using Google Chrome, press CTRL+SHIFT+I (on Windows) or CMD+OPTION+I (on Mac) then find <b>Console</b> in the options that pop up.</p>
 
       <p>(If you are not using Google Chrome, you still have a JavaScript console. Look in the options for 'Developer Tools'</p>
 
-      <p>Once the console is open, refresh the page. Any errors will be listed and the console will tell you exactly which line they happen on.</p>
+      <p>Now <b>refresh</b> the page. The console will show you if there are errors, and the line number where they happen. This error is on line number 41.</p>
+
+      <img src="console-errors.png">
+
+      <p>Hopefully that helps. Remember, the most common errors are that you are missing some brackets - for every "<b>{</b>" there must be a matching "<b>}</b>" and for every "<b>(</b>" there is a matching "<b>)</b>".</p>
+
+      <h2>Part 3: Start from zero</h2>
+
+      <p>The timer should start from zero, not from 9999.</p>
+
+      <p>Find out why the timer is starting from that number and fix it.</p>
+
+      <p>CHECK the timer starts from zero.</p>
+
+      <h2>Part 4: Wait until we're ready</h2>
+
+      <p>The timer starts counting automatically. I want it to just wait, so nothing happens until I click "start".</p>
+
+      <p>Find out why the timer starts automatically. Read the 'tick' function for a clue.</p>
+
+      <p>(Try reading it out loud. When you read <b>===</b> out loud you can say 'is'.)</p>
+
+      <p>CHECK the timer just waits and does not start counting automatically.</p>
+
+      <h2>Part 5: Start</h2>
+
+      <p>Now we need a start button. There is already a 'start' function, but it makes a message pop up!</p>
+
+      <p>Please make it start counting.</p>
+
+      <p>Please get rid of the pop up message, it's annoying.</p>
+
+      <p>CHECK the start button tells the program to start counting.</p>
+
+      <h2>Part 6: Stop</h2>
+
+      <p>The stop button should stop counting, but it should leave the same number on the screen (so I can tell how long I was talking for!)</p>
+
+      <h2>Part 7: Reset</h2>
+
+      <p>This button should make the counter go back to zero.</p>
+
+      <h2>Part 8: investigate setInterval</h2>
+
+      <p>This code uses a command called <b>setInterval</b>. We haven't seen this before. Can you work out what it does?</p>
+   
+      <p>What happens if you change the number used in setInterval?</p>
+
+      <p>What does the word 'tick' mean? Why is it used? Could you put a different word there instead?</p>
 
       <h2>Extra: links</h2>
 
