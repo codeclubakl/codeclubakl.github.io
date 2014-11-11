@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <link href="/js/prism/prism.css" rel="stylesheet" />
+    <title>Big Business Charts at Code Club Auckland</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="/" title="Home">Code Club Auckland</a></h1>
+        <h2>Making cool stuff with code!</h2>
+      </div>
+    </header>
+    <div class="container">
+      <h1>Big Business Charts</h1>
+
+      <p>Profits are up! Let's make a chart so we can show our investors how clever we are.</p>
+
+      <p>(This activity uses JavaScript and jQuery.)</p>
+
+      <h2>What skills do I need?</h2>
+
+      <p>This is best if you've tried HTML, CSS and maybe even a little bit of JavaScript before.</p>
+
+      <p>By now you should also know how to create a new page in Neocities, view it and open it for editing.</p>
+
+      <h2>Part 1: Set up Neocities</h2>
+
+     <p>Make a new page:</p>
+
+      <img src="create-page.png">
+
+      <p>Call it <b>chart</b></p>
+
+      <img src="new-page-name.png">
+
+      <p>Open a tab to <b>edit</b> the new page.</p>
+
+      <img src="edit.png">
+
+      <p>Open a tab to <b>view</b> the new page.</p>
+
+      <img src="view.png">
+
+      <p>In the editing tab, delete all the code.</p>
+
+      <img src="delete-code.png">
+
+      <p><b>Copy and Paste</b> this code instead:</p>
+
+<pre><code class="language-markup">&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;meta charset='utf-8'>
+    &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">&lt;/script>
+    &lt;title>Big Business Charts&lt;/title>
+    &lt;style>
+    /*This is the start of the CSS*/
+    body {
+      background-color: tomato;
+    }
+    canvas {
+      border: 2px solid black;
+    }
+    /*End of the CSS*/
+    &lt;/style>
+  &lt;/head>
+  &lt;body>
+
+    &lt;h1>Big Business Graph&lt;/h1>
+    &lt;canvas width="400px" height="400px">&lt;/canvas>
+
+    &lt;script>
+//here comes the JavaScript
+
+//make a variable and point it to the canvas in the HTML
+var myCanvas = $("canvas");
+
+//this mysterious code gets a "drawing context"
+//Let's name it 'ctx' short for "context"
+var ctx = myCanvas.get(0).getContext('2d');
+
+//ctx lets us draw:
+ctx.font = "20px Arial";
+
+ctx.fillStyle = "blue";
+ctx.fillRect(0, 200, 100, 100);
+ctx.fillText("Profit 2012", 0, 370);
+
+    &lt;/script>
+  &lt;/body>
+&lt;/html>
+</code></pre>
+
+      <p><b>CHECK</b> that you copied all the code. <b>Save</b> the page, then <b>view it.</b></p>
+
+      <img src="save_changes.png">
+
+      <p>If it looks like this, you're ready to start!</p>
+
+      <img src="example.png">
+
+      <h2>What is a canvas?</h2>
+
+      <p>We already know how to include images in our website.</p>
+
+      <p>A "canvas" lets us actually draw our own pictures, with code.</p>
+
+      <p>Why would anyone want to draw with code? Have a think about it during the activity.</p>
+
+      <h2>OK, what are we drawing?</h2>
+
+      <p>We need to show investors that profits are UP!</p>
+
+      <p>We want to make a bar graph that shows profits over the last 3 years. Each year, the bar should get bigger.</p>
+
+      <p>That's how you impress people in big business.</p>
+
+      <h2>Part 2: more bars</h2>
+
+      <p>The code is drawing one blue rectangle and one message on the canvas.</p>
+
+      <p>Guess which line is making the rectangle appear.</p>
+
+      <p>(It's one of the lines that starts with <b>ctx</b>. If you don't know, try changing some of the numbers around and see which part of the page changes.)</p>
+
+      <div class="alert">
+        <ol>
+          <li>Work out what is drawing the blue rectangle.</li>
+          <li>Add a <b>new</b> rectangle next to the first one. <b>You will need to change the numbers to change where the rectangle appears – you won't see it if it's drawn right over the old one.</b></li>
+        </ol>    
+      </div>
+
+      <p>CHECK: You have two bars.</p>
+
+      <h2>Part 3: different colors</h2>
+
+      <p>You can tell drawing context what color to draw with.</p>
+      <p>So far, we told it to use 'blue'</p>
+      <p>It will use that color until you change it to a new one.</p>
+
+      <div class="alert">
+        <ol>
+          <li>Make your new bar a different color from the first one.</li>
+          <li>Add a new label that says "Profit 2013"</li>
+        </ol>
+      </div>
+
+      <h2>Part 4: magic numbers</h2>
+
+      <p>A <b>magic number</b> is a number in your code that is mysterious and hard to understand.</p>
+
+      <p>Magic numbers are a <b>bad thing</b>. Right now, our code is full of magic numbers.</p>
+
+      <p>We can replace any number in JavaScript with a variable instead.</p>
+
+<p>This is the code that draws the first bar:</p>
+
+<pre><code class="language-javascript">
+//you already have this code!
+ctx.fillRect(0, 200, 100, 100);
+</code></pre>
+
+<p>Let's replace ONE of those numbers with a variable.</p>
+
+<pre><code class="language-javascript">
+//this does exactly the same job, but it's easier to understand.
+var width = 300;
+ctx.fillRect(0, 200, 100, width);
+</code></pre>
+
+<p>We created a new <b>var</b>iable called height, and we set it to 300. Then we used the variable in place of the number.</p>
+
+      <div class="alert">
+        <ol>
+          <li>Create four variables: x, y, width and height.</li>
+          <li>Use the variables instead of magic numbers to draw the blue rectangle.</li>
+        </ol>
+      </div>
+
+      <p>Do you think the code is easier to understand now?</p>
+
+      <h2>Part 5: bar heights</h2>
+
+      <p>We want to show profits going up like this:</p>
+
+      <img src="bars-go-up.png">
+
+      <p>Notice how the bars all line up on the bottom edge? We can use some math to do this automatically:</p>
+
+<pre><code class="language-javascript">
+var y = 300 - height; //what does this do?
+</code></pre>
+
+      <div class="alert">
+        <p>Make a graph that shows profits going up each year.</p>   
+      </div>
+
+      <p>That's the end.</p>
+
+      <p>One last thing: What's an advantage to drawing a graph with code, instead of drawing it by hand in a paint program?</p>
+
+      <p>(What if we wanted to update the graph every day? or even every second?)</p>
+
+      <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
+    </div>
+    <script src="/js/prism/prism.js"></script>
+  </body>
+</html>
