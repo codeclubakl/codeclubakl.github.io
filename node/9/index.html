@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <link href="/js/prism/prism.css" rel="stylesheet" />
+    <title>Node web App  - Code Club Auckland</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="/" title="Home">Code Club Auckland</a></h1>
+        <h2>Making cool stuff with code!</h2>
+      </div>
+    </header>
+    <div class="container">
+
+      <div class="comment-body markdown-body markdown-format js-comment-body">
+          <p>Issue <a href="https://github.com/girlcodeakl/girlcodeapp-term3-2015/issues/9" class="issue-link" title="Login Page (not functional)">#9</a> must be done before this one</p>
+
+<p>(Hi! Later on we'll have a proper, secure log in system. But it will take longer. For now, let's just make something basic that kind-of works so that we <em>unblock</em> other work like displaying which user wrote each post.)</p>
+
+<p>This system will let a user log in. Once they log in, the site with will remember who they are. If they post an idea, the site will record them as the author of that idea.</p>
+
+<p><em>We don't actually save user accounts yet, so this will let you log in as anyone - even a made up name</em></p>
+
+<p>We'll make this work using cookies. A cookie is some information a site gives you, that you then show to the site every time you make any request. It's a bit like a membership card!</p>
+
+<ul class="task-list">
+<li class="task-list-item enabled">
+<input type="checkbox" class="task-list-item-checkbox" checked=""> Modify login.html so when you click 'submit', it makes a POST request to a special URL "/login". You can save time by looking at post.html – your code will be mostly the same.</li>
+<li class="task-list-item enabled"><p><input type="checkbox" class="task-list-item-checkbox" checked=""> Test - in your web browser, open the Developer Tools, then try clicking the 'submit' button on login.html - you should see an errror like 'cannot POST /login'.</p></li>
+<li class="task-list-item enabled"><p><input type="checkbox" class="task-list-item-checkbox" checked=""> Edit index.js to make the server respond to POST requests at /login. You can copy and paste the code that responds to /post to get started, look for this:  <code>app.post('/ideas'</code>…</p></li>
+<li class="task-list-item enabled"><p><input type="checkbox" class="task-list-item-checkbox" checked=""> Prove that the client and server are talking to each other by making the server write the user's name to the console. Use some code like this in index.js: <code>console.log("user logged in: " + req.body.name);</code>. Once it's working, when you click 'submit' on the login page, your Terminal or Command Prompt will display the message "user logged in: (user name)"</p></li>
+<li class="task-list-item enabled"><p><input type="checkbox" class="task-list-item-checkbox" checked=""> we need to add a new npm package to work with cookies<br>
+in Terminal \ Command Prompt, <code>npm install --save cookie-parser</code><br>
+in index.js, add these lines in the appropraite places (have a guess? they go near similar lines)</p></li>
+</ul>
+
+<pre><code>//put this after the other require lines near the top
+var cookieParser = require('cookie-parser');`
+</code></pre>
+
+<pre><code>//put this by other app.use lines
+var bodyParser = require('body-parser');
+app.use(cookieParser())
+</code></pre>
+
+<p>If you need more info on how to set up the cookie-parser, read the docs here:<br>
+<a href="https://github.com/expressjs/cookie-parser">https://github.com/expressjs/cookie-parser</a></p>
+
+<ul class="task-list">
+<li class="task-list-item enabled">
+<input type="checkbox" class="task-list-item-checkbox"> When a user logs in, give them a cookie! Write their name in the cookie.</li>
+</ul>
+
+<pre><code>var userName = "alice";
+res.cookie('name', userName, { maxAge: 900000, httpOnly: true });
+</code></pre>
+
+<ul class="task-list">
+<li class="task-list-item enabled">
+<input type="checkbox" class="task-list-item-checkbox"> Check it's working by making the server display the user's cookie whenever they GET the list of posts, by adding this line to the code that gets the list of posts:</li>
+</ul>
+
+<pre><code>console.log("this user looked at the posts: " + req.cookies.name);
+</code></pre>
+      </div>
+
+    </div>
+    <script src="/js/prism/prism.js"></script>
+  </body>
+</html>
