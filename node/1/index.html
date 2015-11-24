@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <link href="/js/prism/prism.css" rel="stylesheet" />
+    <title>Node web App  - Code Club Auckland</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="/" title="Home">Code Club Auckland</a></h1>
+        <h2>Making cool stuff with code!</h2>
+      </div>
+    </header>
+    <div class="container">
+
+<pre>
+Currently, when you click 'submit' on the post.html page, you are taken
+ to a new page that says "Thanks for your idea"
+
+This is confusing and not very attractive.
+
+After this change, when you click submit,
+1. you stay on the same page
+2. a little box pops up that says "Thanks! Your idea was saved!"
+
+All these changes are in post.html
+
+
+Act 1
+- [ ] You will need to include jQuery in the page if it is not already included.
+(Google it! Or look in the head of the feed.html for an example to copy. It's
+one line of html code, and it goes in the page head)
+
+Use jQuery to make something happen when you submit the form. To do this:
+
+- [ ] in the html, add a class to the &lt;form> so we can find it using
+ javascript
+- [ ] add a pair of &lt;script> </script> tags so we can add some javascript.
+Add these near the end of the file, just above &lt;/body> and &lt;/html>
+- [ ] use jquery to find the form in the html, using its class name. (Do you
+ remember this from the activities?). In the star activity we made things
+ happen on click. Here we want to make things happen on "submit", so you'll
+ end up with a line of code like this:
+
+```
+$("formclassname").on("submit", myCoolFunction);
+```
+
+- [ ] make a function that will be called when the form is submitted.
+
+```
+var myCoolFunction = function (e) {
+    preventDefault();
+}
+```
+
+The line 'preventDefault' disables the browser's built in action
+(which is to go to a new page).
+
+TEST: clicking 'submit' should now do nothing!
+
+Act 2:
+
+history lesson (you can skip this):
+Currently, this page works using an old school technique from before JavaScript
+ was a thing. In the HTML is a form. A form is just like a paper form - you
+  fill it in. When you press 'Submit', your browser takes all the things you
+  wrote, puts them together into a message, and POSTs it to the address
+  specified at the top of the form. Then your browser waits for the response
+   from the server. When it arrives, it displays the response
+    ("Thanks for your idea").
+
+In your new function:
+
+- [ ] Look up how to POST using jQuery.
+- [ ] Use jquery to POST to the address "/ideas".
+- [ ] Get the user's idea from the HTML so you can post it
+- [ ] Include the user's idea in the post `{idea: userIdea}`
+- [ ] check that the idea now appears on the ideas feed
+
+Act 3: show feedback
+- [ ] Add an empty div to the page with a special class like 'note' i.e.
+ &lt;div class="note">&lt;/div>
+- [ ] In your function, tell jquery to select that div and change the text
+ inside it to say "Thanks! Your idea was submitted!" using some code like this:
+
+  $(".note").text("Thanks! Your idea was submitted");
+
+Act 4: show the server's feedback
+actually we're not going to do this right now
+</pre>
+
+      <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
+
+    </div>
+    <script src="/js/prism/prism.js"></script>
+  </body>
+</html>
