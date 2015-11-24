@@ -17,84 +17,112 @@
     </header>
     <div class="container">
 
-<pre>
-Currently, when you click 'submit' on the post.html page, you are taken
- to a new page that says "Thanks for your idea"
+      <div class="comment-body markdown-body markdown-format js-comment-body">
+                <p>Currently, when you click 'submit' on the post.html page, you are taken to a new page that says "Thanks for your idea"</p>
 
-This is confusing and not very attractive.
+      <p>This is confusing and not very attractive.</p>
 
-After this change, when you click submit,
-1. you stay on the same page
-2. a little box pops up that says "Thanks! Your idea was saved!"
+      <p>After this change, when you click submit,<br>
+      1. you stay on the same page<br>
+      2. a little box pops up that says "Thanks! Your idea was saved!"</p>
 
-All these changes are in post.html
+      <p>All these changes are in post.html</p>
 
+      <h2>Act 1</h2>
 
-Act 1
-- [ ] You will need to include jQuery in the page if it is not already included.
-(Google it! Or look in the head of the feed.html for an example to copy. It's
-one line of html code, and it goes in the page head)
+      <ul class="task-list">
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> You will need to include jQuery in the page if it is not already included. You do this by adding one line of HTML code to the HEAD of the page. Google "how to add jquery to a page", or look in the head of the feed.html for the line you need to copy.)</li>
+      </ul>
 
-Use jQuery to make something happen when you submit the form. To do this:
+      <p>jQuery is a library (a whole lot of javascript code that someone else wrote so we don't have to).</p>
 
-- [ ] in the html, add a class to the &lt;form> so we can find it using
- javascript
-- [ ] add a pair of &lt;script> </script> tags so we can add some javascript.
-Add these near the end of the file, just above &lt;/body> and &lt;/html>
-- [ ] use jquery to find the form in the html, using its class name. (Do you
- remember this from the activities?). In the star activity we made things
- happen on click. Here we want to make things happen on "submit", so you'll
- end up with a line of code like this:
+      <p>Use jQuery to make something happen when you submit the form. To do this:</p>
 
-```
-$("formclassname").on("submit", myCoolFunction);
-```
+      <ul class="task-list">
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> in the html, add a class to the <code>&lt;form&gt;</code> so we can find it using javascript</li>
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> add a pair of <code>&lt;script&gt;</code> tags so we can add some javascript between them. Add these near the end of the file, just above <code>&lt;/body&gt;</code> and <code>&lt;/html&gt;</code>
+      </li>
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> in your script, use jquery to find the form, using its class name. (Do you remember this from the previous activities?). In the star activity we made things happen on click. Here we want to make things happen on "submit", so you'll end up with a line of code like this in your script:</li>
+      </ul>
 
-- [ ] make a function that will be called when the form is submitted.
+      <pre><code>$(".formclassname").on("submit", myCoolFunction);</code></pre>
 
-```
-var myCoolFunction = function (e) {
-    preventDefault();
-}
-```
+      <ul class="task-list">
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> make a function that will be called when the form is submitted.</li>
+      </ul>
 
-The line 'preventDefault' disables the browser's built in action
-(which is to go to a new page).
+      <pre><code>var myCoolFunction = function (e) {
+    e.preventDefault();
+}</code></pre>
 
-TEST: clicking 'submit' should now do nothing!
+      <p>The line 'e.preventDefault()' disables the browser's built in action (which is to go to a new page).</p>
 
-Act 2:
+      <ul class="task-list">
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> TEST: clicking 'submit' should now do nothing! yay :/</li>
+      </ul>
 
-history lesson (you can skip this):
-Currently, this page works using an old school technique from before JavaScript
- was a thing. In the HTML is a form. A form is just like a paper form - you
-  fill it in. When you press 'Submit', your browser takes all the things you
-  wrote, puts them together into a message, and POSTs it to the address
-  specified at the top of the form. Then your browser waits for the response
-   from the server. When it arrives, it displays the response
-    ("Thanks for your idea").
+      <h2>Act 2</h2>
 
-In your new function:
+      <p>history lesson (you can skip this):<br>
+      Currently, this page works using an old school technique from before JavaScript was a thing. In the HTML is a form. A form is just like a paper form - you fill it in. When you press 'Submit', your browser takes all the things you wrote, puts them together into a message, and POSTs it to the address specified at the top of the form. Then your browser waits for the response from the server. When it arrives, it displays the response ("Thanks for your idea").</p>
 
-- [ ] Look up how to POST using jQuery.
-- [ ] Use jquery to POST to the address "/ideas".
-- [ ] Get the user's idea from the HTML so you can post it
-- [ ] Include the user's idea in the post `{idea: userIdea}`
-- [ ] check that the idea now appears on the ideas feed
+      <p>In your new function, we now need to make it do a POST that sends the right info to the server.</p>
 
-Act 3: show feedback
-- [ ] Add an empty div to the page with a special class like 'note' i.e.
- &lt;div class="note">&lt;/div>
-- [ ] In your function, tell jquery to select that div and change the text
- inside it to say "Thanks! Your idea was submitted!" using some code like this:
+      <p>You could look up "how to POST using jQuery" on google and find some examples, but to save you time I've pulled a good example out here:</p>
 
-  $(".note").text("Thanks! Your idea was submitted");
+      <pre><code>var data = {};
+$.post( "url" , data );</code></pre>
 
-Act 4: show the server's feedback
-actually we're not going to do this right now
-</pre>
+      <ul class="task-list">
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> add that code to your function. Change the first argument from "url" to "/ideas" - this is where we are posting to. (It has to match the url the server is listening at in our server code in index.js)</li>
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> TEST: clicking submit should now add a new idea to the ideas feed - but it will be null.</li>
+      </ul>
 
-      <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
+      <h2>Act 3</h2>
+
+      <p>How do we get the words the user typed in, and send them to the server?</p>
+
+      <p>We will use jQuery to get the part of the HTML page the user is typing into.<br>
+      Just like the form, we should give this part of the HTML a class so our javascript can select it.</p>
+
+      <ul class="task-list">
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> Add a <em>class</em> to the <code>&lt;input&gt;</code> where your idea goes. i.e. <code>class="ideaInput"</code>
+      </li>
+      </ul>
+
+      <p>Now we can select it with jQuery, and get the value out of it using the .val function.</p>
+
+      <pre><code>data.idea = $(".ideaInput").val();</code></pre>
+
+      <p>You'll need to add the line above just after the line <code>var data = {}</code>. That means, after we create an empty object named 'data', but before we send the object to the server, we add some information to it.</p>
+
+      <ul class="task-list">
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> Test: you should now be able to correctly submit ideas again.</li>
+      </ul>
+
+      <h2>Act 4: show feedback</h2>
+
+      <ul class="task-list">
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> Add an empty div to the page with a special class like 'note' i.e. <div></div>
+      </li>
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> In your function, tell jquery to select that div and change the text inside it to say "Thanks! Your idea was submitted!" using some code like this: <code>$(".note").text("Thanks! Your idea was submitted");</code>
+      </li>
+      </ul>
+
+      <p>Now whenever your function runs, it adds that text into the note.</p>
+            </div>
 
     </div>
     <script src="/js/prism/prism.js"></script>

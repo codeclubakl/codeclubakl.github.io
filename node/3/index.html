@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <link href="/js/prism/prism.css" rel="stylesheet" />
+    <title>Node web App  - Code Club Auckland</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="/" title="Home">Code Club Auckland</a></h1>
+        <h2>Making cool stuff with code!</h2>
+      </div>
+    </header>
+    <div class="container">
+
+      <p>On the server, whenever an idea is saved, we want to save extra info like:</p>
+
+      <ul>
+      <li>who posted the idea</li>
+      <li>what time it was posted</li>
+      <li>maybe a picture was posted too</li>
+      <li>maybe the number of Likes or Reblogs the idea has</li>
+      </ul>
+
+      <p>To support this, we need to change ideas from being a <code>string</code> to being an <code>object</code>.</p>
+
+      <p>A string is a sequence of letters - like a word, a sentence, or a paragraph.</p>
+
+      <p>here are some example strings</p>
+
+      <pre><code>var string = "hello, i am a string";
+var string2 = "i am another string";
+var string3 = "a";
+var string4 = ""; //this is an empty string!
+      </code></pre>
+
+      <p>An object, in JavaScript, is a bit like a filing system or a dictionary or a phone book. It can have lots of values and each value is filed under a certain label. Programmers call these "name-value pairs" because each value has a name.</p>
+
+      <pre><code>var obby = {}; //create an empty object
+obby.rating = 10; //created a name-value pair: the name is rating and the value is the number 10
+obby.greeting = "hello, i am a string"; //the name is greeting and the value is a string
+      </code></pre>
+
+      <h3>Act 1:</h3>
+
+      <p>You will need to change the data structure a bit, so each idea an object, not just a string.</p>
+
+      <p>Look in index.js at the line that pushes the example idea onto the list of ideas.<br>
+      At the moment, it pushes a string.</p>
+
+      <p><code>coolIdeas.push("try wearing a hat on cold days");</code></p>
+
+      <p>Replace that line with this:</p>
+
+      <pre><code>var idea = {};
+idea.text = "try wearing a hat on cold days";
+coolIdeas.push(idea);
+      </code></pre>
+
+      <p>Now we are pushing an object.</p>
+
+      <h3>Act 2: Displaying the idea again</h3>
+
+      <p>If you look at the ideas feed, the example idea won't look good any more. In <em>feed.html</em>, we need to change the code to display the idea.text instead of the whole idea.</p>
+
+      <ul class="task-list">
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox"> in feed.html, the idea will now display as [Object object]. You will need to tell the page to display the <em>text</em> value of the object. Basically, wherever it adds <code>idea</code> to the page, change it to add <code>idea.text</code> instead.</li>
+      </ul>
+
+      <h3>Act 3: posting ideas</h3>
+
+      <p>If you try posting an idea and looking at the feed, that's broken now :/ </p>
+
+      <p>That's because the ideas you post are still just a string, not an object.</p>
+
+      <p>Currently, we get the value <code>req.body.idea</code> which is a string, and save it straight into the coolIdeas list</p>
+
+      <p>Instead, we are going to create a new empty object, then put that value in it as the .text field, then save it. Like this:</p>
+
+      <pre><code>//delete this: -&gt; coolIdeas.push(req.body.idea); //save a new idea
+//add this:
+var idea = {};
+idea.text = req.body.idea;
+coolIdeas.push(idea);
+      </code></pre>
+
+      <ul class="task-list">
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox" > test that the feed.html now works like it used to, displaying the example idea and the user-posted ideas properly.</li>
+      </ul>
+
+      <p>Commit your changes. Check everything works!</p>
+
+      <h3>Act 4 - saving additional information</h3>
+
+      <p>Now we can add other information to the ideas.</p>
+
+      <ul class="task-list">
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox" > When an idea is saved on the server (index.js), as well as saving the text, create a new name-value pair with idea.time = 0;</li>
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox" > test that it's working: in your web browser, go to http://localhost:3000/ideas and look at the raw list of ideas. You should see that each idea now has a time as well as a text.</li>
+      <li class="task-list-item enabled">
+      <input type="checkbox" class="task-list-item-checkbox" > Instead of always setting the time to 0, get the actual time - try googling "How to get current time javascript"</li>
+      </ul>
+
+    </div>
+    <script src="/js/prism/prism.js"></script>
+  </body>
+</html>
