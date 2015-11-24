@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <link href="/js/prism/prism.css" rel="stylesheet" />
+    <title>Node web App  - Code Club Auckland</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="/" title="Home">Code Club Auckland</a></h1>
+        <h2>Making cool stuff with code!</h2>
+      </div>
+    </header>
+    <div class="container">
+
+      <h1>Node web app</h1>
+
+      <p>This tutorial assumes you've already done the NodeStart activity, where you made a basic web app that lets you post ideas and see an ideas feed.</p>
+
+      <h2>Now what?</h2>
+
+      <p>Time to build your own web app. You can copy the code from the NodeStart activity as a starting point, then make changes.</p>
+
+      <p>If you know how to use Github, you can work together with some other people to build an app. This will help you make a lot more progress, because there is lots of work to be done.</p>
+
+      <h2>Creating a new Github project</h2>
+
+      <p>One person per team: go to github.com and log in to your account. Click on the <b>New repository</b> button to create a new repository, give it a name and create it.</p>
+
+      <p>And the rest of the team as collaborators. From the repository page, click <b>settings</b>, then <b>collaborators</b>, then add each team member as a collaborator.</p>
+
+      <p>Now everyone needs to go to the repository page and click 'Clone in Desktop' to clone the project onto their own computer, so they can work.</p>
+
+      <h2>Making a change</h2>
+
+      <p>Decide what you are going to work on. Look at your project's Issues page, if there are no issues create one to work on. Assign the issue to yourself so everyone knows it is being worked on, this stops two people trying to change the same thing at the same time.</p>
+
+      <p>In <b>Github Desktop</b>, make sure you are up to date (click 'Sync') then create a new Branch for your changes. Include the issue number in the branch name.</p>
+
+      <p>Work on your issue, making changes. Whenever you have one step complete and working, commit it using Github Desktop. Once you've finished, use Github Desktop to create a Pull Request. This means you are ready for your changes to be put into the main project.</p>
+
+      <h2>Ideas to work on:</h2>
+
+      <ol>
+        <li>On post.html, when you click submit, it should NOT take you to a new page. It should just say 'thanks for your idea'</li>
+        <li>Put a link bar on every page so its easy to navigate between the pages</li>
+        <li>On the server, save each ideas as a javascript object {} instead of just a string, so we can add metadata like the author's name, and the time it was posted</li>
+        <li>(depends on #3) When you post an idea, you can type in your name (the 'author') and this is saved and displayed in the feed</li>
+        <li>(depends on #3) When you post an idea, the server records the time it was posted. This is displayed in the feed.</li>
+        <li>Make the post.html form look better</li>
+        <li>Make the feed.html ideas look better</li>
+        <li>Make a login page, even if it doesn't work yet</li>
+        <li>Depends on 8: Make the login page give the user a cookie with their username. When they post, use the cookie to get their name instead of making them type it in every time.</li>
+        <li>Publish the app on Heroku so anyone can use it. Set up Heroku to automatically update whenever someone updates the project.</li>
+      </ol>
+
+      <footer>This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. You are free to use, copy and modify this page as long as you give credit to Code Club Auckland.</footer>
+
+    </div>
+    <script src="/js/prism/prism.js"></script>
+  </body>
+</html>
